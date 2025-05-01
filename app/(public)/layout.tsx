@@ -1,4 +1,4 @@
-import Navbar from "@/components/shared/Navbar";
+import Navbar from "@/components/shared/nav/Navbar";
 
 export default function PublicLayout({
   children,
@@ -6,14 +6,15 @@ export default function PublicLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="relative w-full flex items-center justify-center">
-      {/* Navbar */}
-      <Navbar className="top-2" />
+    <main className="container mx-auto">
+      {/* navbar */}
+      <Navbar />
 
-      {/* Main content */}
-      <div className="min-h-screen">{children}</div>
+      {/* main content */}
+      <div className="min-h-screen pt-20">{children}</div>
 
-      {/* Footer */}
+      {/* footer */}
+      {/* <Footer /> */}
     </main>
   );
 }
