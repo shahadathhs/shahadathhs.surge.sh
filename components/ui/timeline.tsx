@@ -1,96 +1,8 @@
 "use client";
 
+import { experienceData } from "@/constant/experienceData";
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
-
-interface TimelineEntry {
-  title: string;
-  content: React.ReactNode;
-}
-
-const data: TimelineEntry[] = [
-  {
-    title: "Nov 2024 – Mar 2025",
-    content: (
-      <div>
-        <p className="mb-1 text-lg font-semibold text-neutral-800  dark:text-neutral-200">
-          🚀 Monster Studio (Chattogram, Bangladesh · On-site)
-        </p>
-        <p className="mb-2 text-lg font-normal text-neutral-700  dark:text-neutral-300">
-          Web Developer
-        </p>
-        <ul className="mb-8 text-lg font-normal text-neutral-800  dark:text-neutral-200 list-disc list-inside">
-          <li>
-            Contributed to both frontend and backend development in a
-            large-scale MERN stack project.
-          </li>
-          <li>
-            Built reusable components and REST APIs using React.js, Remix,
-            Express.js, Node.js, and MongoDB.
-          </li>
-          <li>
-            Directly managed and configured a large-scale Nx monorepo,
-            optimizing for modularity and scalability.
-          </li>
-          <li>
-            Led a small frontend team for several weeks, facilitating
-            collaboration and improving productivity.
-          </li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    title: "Sep 2024 – Oct 2024",
-    content: (
-      <div>
-        <p className="mb-1 text-lg font-semibold text-neutral-800  dark:text-neutral-200">
-          🚀 Monster Studio (Chattogram, Bangladesh · On-site)
-        </p>
-        <p className="mb-2 text-lg font-normal text-neutral-700  dark:text-neutral-300">
-          Quality Assurance Intern
-        </p>
-        <ul className="mb-8 text-lg font-normal text-neutral-800  dark:text-neutral-200 list-disc list-inside">
-          <li>
-            Wrote comprehensive unit tests for both frontend and backend using
-            Jest, Vitest, MSW, and Supertest.
-          </li>
-          <li>
-            Explored and experimented with K6 for backend load testing and
-            performance profiling.
-          </li>
-          <li>
-            Contributed to improving overall code quality and reliability in a
-            full-stack testing environment.
-          </li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    title: "Aug 2024",
-    content: (
-      <div>
-        <p className="mb-1 text-lg font-semibold text-neutral-800  dark:text-neutral-200">
-          🚀 Monster Studio (Chattogram, Bangladesh · On-site)
-        </p>
-        <p className="mb-2 text-lg font-normal text-neutral-700  dark:text-neutral-300">
-          Trainee Frontend Developer
-        </p>
-        <ul className="mb-8 text-lg font-normal text-neutral-800  dark:text-neutral-200 list-disc list-inside">
-          <li>
-            Gained practical experience with React.js, Tailwind CSS, and modern
-            frontend workflows.
-          </li>
-          <li>
-            Participated in UI implementation, responsive design, and component
-            architecture basics.
-          </li>
-        </ul>
-      </div>
-    ),
-  },
-];
 
 export const Timeline = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -99,8 +11,7 @@ export const Timeline = () => {
 
   useEffect(() => {
     if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
+      setHeight(ref.current.getBoundingClientRect().height);
     }
   }, [ref]);
 
@@ -118,19 +29,18 @@ export const Timeline = () => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          Changelog from my journey
+        <h2 className="text-2xl md:text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
+          Professional Timeline
         </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-lg">
-          I&apos;ve been in tech for alomst 1 and half years. Here are some of
-          my experiences. I am always looking for new opportunities to learn and
-          grow. If you have any suggestions or feedback, please feel free to
-          reach out to me. I would love to hear from you!
+        <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-lg">
+          With over a year and a half in tech, here are highlights from my
+          journey. I&apos;m always eager for new challenges and collaborations—feel
+          free to reach out!
         </p>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-        {data.map((item, index) => (
+        {experienceData.map((item, index) => (
           <div
             key={index}
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
@@ -148,10 +58,27 @@ export const Timeline = () => {
               <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
                 {item.title}
               </h3>
-              {item.content}{" "}
+              <div className="mb-2">
+                <h4 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
+                  {item.company}
+                </h4>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                  {item.location}
+                </p>
+              </div>
+              <p className="text-md font-medium text-blue-600 dark:text-blue-400 mb-4">
+                {item.designation}
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-base font-normal text-neutral-800 dark:text-neutral-200">
+                {item.responsibilities.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}
+
+        {/* Progress Line */}
         <div
           style={{
             height: height + "px",
