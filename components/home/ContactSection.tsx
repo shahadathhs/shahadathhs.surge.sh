@@ -83,9 +83,9 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="grid md:grid-cols-2 relative overflow-hidden items-center gap-12 p-8 lg:p-12 border rounded">
+    <div className="grid md:grid-cols-2 relative overflow-hidden items-center gap-12 p-2 md:p-8 lg:p-12 border rounded">
       {/* info */}
-      <div className="space-y-8 max-w-[450px]">
+      <div className="space-y-4 md:space-y-8 max-w-[450px]">
         <h2 className="text-3xl font-semibold">
           <TypingAnimation>Get in touch</TypingAnimation>
         </h2>
@@ -139,7 +139,7 @@ export default function ContactSection() {
                   href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline text-sm md:text-base truncate max-w-[200px] md:max-w-[250px]"
+                  className="text-primary hover:underline text-sm md:text-base truncate max-w-[180px] md:max-w-[250px]"
                 >
                   {email}
                 </a>

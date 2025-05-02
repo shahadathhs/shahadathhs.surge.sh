@@ -44,10 +44,22 @@ export default function AboutMeSection() {
     <WarpBackground>
       <section
         id="about"
-        className="container mx-auto flex flex-col md:flex-row items-center gap-10 p-8"
+        className="container mx-auto flex flex-col md:flex-row items-center gap-10 p-2 md:p-4 lg:p-8"
       >
         {/* Text & Features */}
         <div className="flex-1 space-y-6">
+          {/* about me title */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200">
+              About Me
+            </h2>
+          </motion.div>
+
+          {/* about me discription */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -43,7 +43,7 @@ export default function SkillsSection() {
 
   return (
     <div className="my-10">
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center text-xl justify-center">
         <TypewriterEffectSmooth words={words} />
       </div>
 
