@@ -107,16 +107,18 @@ export default function ProjectPage() {
               <Separator />
 
               <div className="space-y-3">
-                <Button asChild className="w-full" variant="outline">
-                  <Link
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Link>
-                </Button>
+                {project?.liveLink && (
+                  <Button asChild className="w-full" variant="outline">
+                    <Link
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </Link>
+                  </Button>
+                )}
 
                 <Button asChild className="w-full" variant="outline">
                   <Link
