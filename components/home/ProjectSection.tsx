@@ -11,7 +11,7 @@ export default function ProjectSection() {
   return (
     <section className="py-10">
       <div className="container">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-end mb-8">
           <div>
             <h2 className="text-3xl font-bold tracking-tight">
               Featured Projects
@@ -20,9 +20,12 @@ export default function ProjectSection() {
               Check out some of my recent work
             </p>
           </div>
-          <Button asChild>
-            <Link href="/projects">View All Projects</Link>
-          </Button>
+
+          <div className="hidden md:flex">
+            <Button asChild>
+              <Link href="/projects">View All Projects</Link>
+            </Button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -36,6 +39,12 @@ export default function ProjectSection() {
               technologies={project.coreTechnology}
             />
           ))}
+        </div>
+
+        <div className="flex md:hidden mt-8 w-full justify-center">
+          <Button asChild>
+            <Link href="/projects">View All Projects</Link>
+          </Button>
         </div>
       </div>
     </section>

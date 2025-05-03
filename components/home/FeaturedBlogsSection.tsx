@@ -12,23 +12,26 @@ import {
 import { getFeaturedBlogs } from "@/lib/blog-service";
 import { nanoid } from "nanoid";
 
-export async function FeaturedBlogs() {
+export default async function FeaturedBlogsSection() {
   const blogs = await getFeaturedBlogs();
 
   if (!blogs || blogs.length === 0) return null;
 
   return (
-    <div className="py-10">
-      <div className="flex justify-between items-center mb-8">
+    <div className="pb-10">
+      <div className="flex justify-between items-end mb-8">
         <div>
           <h2 className="text-3xl font-bold tracking-tight">Featured Blogs</h2>
           <p className="text-muted-foreground mt-2">
             Explore latest blog posts and insights
           </p>
         </div>
-        <Button asChild>
-          <Link href="/blogs">View All Blogs</Link>
-        </Button>
+
+        <div className="hidden md:flex">
+          <Button asChild>
+            <Link href="/blogs">View All Blogs</Link>
+          </Button>
+        </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -78,6 +81,12 @@ export async function FeaturedBlogs() {
             <p className="text-muted-foreground">No blog posts found.</p>
           </div>
         )}
+      </div>
+
+      <div className="flex md:hidden mt-8 w-full justify-center">
+        <Button asChild>
+          <Link href="/blogs">View All Blogs</Link>
+        </Button>
       </div>
     </div>
   );
