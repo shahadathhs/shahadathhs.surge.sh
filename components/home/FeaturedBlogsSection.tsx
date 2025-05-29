@@ -18,7 +18,7 @@ export default async function FeaturedBlogsSection() {
   if (!blogs || blogs.length === 0) return null;
 
   return (
-    <div className="py-10">
+    <div className="pb-10">
       <div className="flex justify-between items-end mb-8">
         <div>
           <h2 className="text-3xl font-bold tracking-tight">Featured Blogs</h2>

@@ -10,14 +10,14 @@ import { BorderBeam } from "../magicui/border-beam";
 
 export default function CertificateTimeline() {
   return (
-    <div className="container mx-auto py-12 px-4 md:px-14 border rounded-md overflow-clip relative">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl md:text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
+    <div className="container mx-auto py-12 md:pt-16 px-4 md:px-16 border rounded overflow-clip relative">
+      <div className="flex items-center justify-between mb-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
           Certifications
         </h2>
       </div>
 
-      <div className="mb-8">
+      <div className="mb-8 max-w-7xl mx-auto">
         {certificates.map((certificate) => (
           <div
             key={certificate.id}

@@ -1,8 +1,8 @@
 "use client";
 
 import { experienceData } from "@/constant/experienceData";
-import { useScroll, useTransform, motion } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 export const Timeline = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -25,17 +25,17 @@ export const Timeline = () => {
 
   return (
     <div
-      className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
+      className="w-full bg-white dark:bg-neutral-950 font-sans md:px-16"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-2xl md:text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
+      <div className="max-w-7xl mx-auto px-2 md:px-0 pt-10 md:pt-20">
+        <h2 className="text-4xl mb-4 font-bold text-black dark:text-white">
           Professional Timeline
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-lg">
           With almost a year and a half in tech, here are highlights from my
-          journey. I&apos;m always eager for new challenges and collaborations—feel
-          free to reach out!
+          journey. I&apos;m always eager for new challenges and
+          collaborations—feel free to reach out!
         </p>
       </div>
 

@@ -14,7 +14,6 @@ import { BorderBeam } from "../magicui/border-beam";
 import { Badge } from "../ui/badge";
 
 export default function SkillsSection() {
-  // 1) change description to string[]
   const skills: Array<{
     title: string;
     description: string[];
@@ -32,7 +31,6 @@ export default function SkillsSection() {
     { title: "Package Manager", description: ["npm", "pnpm"] },
   ];
 
-  // 2) map titles to icons in one place
   const iconMap: Record<string, React.ReactNode> = {
     Languages: <IconLanguage className="h-8 w-8" />,
     Backend: <IconServer className="h-8 w-8" />,
@@ -45,10 +43,10 @@ export default function SkillsSection() {
   };
 
   return (
-    <div className="my-10 xl:border rounded-md relative overflow-clip md:px-10">
-      <div className="xl:mt-12 md:p-6">
+    <div className="my-10 md:border rounded relative overflow-clip md:px-16">
+      <div className="md:mt-12 py-6 max-w-7xl mx-auto">
         {/* <TypewriterEffectSmooth words={words} /> */}
-        <h2 className="text-2xl md:text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
+        <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
           Know about my skills
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-lg">
@@ -56,7 +54,7 @@ export default function SkillsSection() {
         </p>
       </div>
 
-      <div className="md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-12 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-12 max-w-7xl mx-auto relative z-10">
         {skills.map((skill, idx) => (
           <Skill
             key={skill.title}
@@ -72,7 +70,7 @@ export default function SkillsSection() {
         duration={40}
         size={300}
         reverse
-        className="from-transparent via-green-500 to-transparent opacity-0 xl:opacity-100"
+        className="from-transparent via-green-500 to-transparent opacity-0 md:opacity-100"
       />
     </div>
   );

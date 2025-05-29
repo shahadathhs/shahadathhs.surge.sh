@@ -1,14 +1,14 @@
 "use client";
 
+import { sendEmail } from "@/app/actions/email";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { CheckCircle, Copy, Github, Linkedin, Mail } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
-import { Github, Linkedin, Mail, Copy, CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
-import { sendEmail } from "@/app/actions/email";
 import { toast } from "sonner";
 import { BorderBeam } from "../magicui/border-beam";
 import { TypingAnimation } from "../magicui/typing-animation";
@@ -83,167 +83,173 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="grid md:grid-cols-2 relative overflow-hidden items-center gap-12 p-2 md:p-8 lg:p-12 border rounded">
-      {/* info */}
-      <div className="space-y-4 md:space-y-8 max-w-[450px]">
-        <h2 className="text-3xl font-semibold">
-          <TypingAnimation>Get in touch</TypingAnimation>
-        </h2>
+    <div className="relative overflow-hidden items-center p-2 md:p-16 border rounded mt-10">
+      <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+        {/* info */}
+        <div className="space-y-4 md:space-y-8 max-w-[450px]">
+          <h2 className="text-3xl font-semibold">
+            <TypingAnimation>Get in touch</TypingAnimation>
+          </h2>
 
-        <div className="space-y-6">
-          {/* github */}
-          <div className="flex items-center space-x-4">
-            <div className="bg-primary/10 p-3 rounded-full">
-              <Github className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-medium">GitHub</h3>
-              <a
-                href="https://github.com/shahadathhs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                github.com/shahadathhs
-              </a>
-            </div>
-          </div>
-
-          {/* linkedin */}
-          <div className="flex items-center space-x-4">
-            <div className="bg-primary/10 p-3 rounded-full">
-              <Linkedin className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-medium">LinkedIn</h3>
-              <a
-                href="https://www.linkedin.com/in/shahadathhs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                linkedin.com/in/shahadathhs
-              </a>
-            </div>
-          </div>
-
-          {/* email */}
-          <div className="flex items-center space-x-4">
-            <div className="bg-primary/10 p-3 rounded-full">
-              <Mail className="h-6 w-6 text-primary" />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-medium">Email</h3>
-              <div className="flex items-center gap-4">
+          <div className="space-y-6">
+            {/* github */}
+            <div className="flex items-center space-x-4">
+              <div className="bg-primary/10 p-3 rounded-full">
+                <Github className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-medium">GitHub</h3>
                 <a
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
+                  href="https://github.com/shahadathhs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline text-sm md:text-base truncate max-w-[180px] md:max-w-[250px]"
+                  className="text-primary hover:underline"
                 >
-                  {email}
+                  github.com/shahadathhs
                 </a>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={copyToClipboard}
-                  className="ml-2"
+              </div>
+            </div>
+
+            {/* linkedin */}
+            <div className="flex items-center space-x-4">
+              <div className="bg-primary/10 p-3 rounded-full">
+                <Linkedin className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-medium">LinkedIn</h3>
+                <a
+                  href="https://www.linkedin.com/in/shahadathhs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
                 >
-                  {copied ? (
-                    <CheckCircle className="h-4 w-4" />
-                  ) : (
-                    <Copy className="h-4 w-4" />
-                  )}
-                </Button>
+                  linkedin.com/in/shahadathhs
+                </a>
+              </div>
+            </div>
+
+            {/* email */}
+            <div className="flex items-center space-x-4">
+              <div className="bg-primary/10 p-3 rounded-full">
+                <Mail className="h-6 w-6 text-primary" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-medium">Email</h3>
+                <div className="flex items-center xl:gap-4">
+                  <a
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline text-sm md:text-base truncate max-w-[180px] xl:max-w-[280px]"
+                  >
+                    {email}
+                  </a>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={copyToClipboard}
+                    className="ml-2"
+                  >
+                    {copied ? (
+                      <CheckCircle className="h-4 w-4" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* form */}
+        <div className="w-full flex justify-end">
+          <Card className="w-full relative overflow-hidden max-w-[450px]">
+            <CardContent>
+              <h2 className="text-2xl font-semibold mb-6">Send me Email</h2>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Your email address"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    placeholder="Email subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Your message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Email"}
+                </Button>
+              </form>
+            </CardContent>
+
+            <BorderBeam
+              duration={6}
+              size={400}
+              className="from-transparent via-red-500 to-transparent"
+            />
+            <BorderBeam
+              duration={6}
+              delay={3}
+              size={400}
+              className="from-transparent via-blue-500 to-transparent"
+            />
+          </Card>
+        </div>
+
+        {/* border beam */}
+        <BorderBeam
+          duration={40}
+          size={300}
+          reverse
+          className="from-transparent via-green-500 to-transparent"
+        />
       </div>
-
-      {/* form */}
-      <div className="w-full flex justify-end">
-        <Card className="w-full relative overflow-hidden max-w-[450px]">
-          <CardContent>
-            <h2 className="text-2xl font-semibold mb-6">Send me Email</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Your email address"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subject</Label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  placeholder="Email subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Your message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Email"}
-              </Button>
-            </form>
-          </CardContent>
-
-          <BorderBeam
-            duration={6}
-            size={400}
-            className="from-transparent via-red-500 to-transparent"
-          />
-          <BorderBeam
-            duration={6}
-            delay={3}
-            size={400}
-            className="from-transparent via-blue-500 to-transparent"
-          />
-        </Card>
-      </div>
-
-      {/* border beam */}
-      <BorderBeam
-        duration={40}
-        size={300}
-        reverse
-        className="from-transparent via-green-500 to-transparent"
-      />
     </div>
   );
 }

@@ -84,7 +84,7 @@ export const WarpBackground: React.FC<WarpBackgroundProps> = ({
   const leftBeams = useMemo(() => generateBeams(), [generateBeams]);
 
   return (
-    <div className={cn("relative rounded border p-2 md:p-4 lg:p-16 h-auto", className)} {...props}>
+    <div className={cn("relative rounded border p-2 md:p-16 h-auto", className)} {...props}>
       <div
         style={
           {
