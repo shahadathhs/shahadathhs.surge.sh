@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { LogOut, Menu } from "lucide-react";
+import { DashboardNav } from "@/components/dashboard/dashboard-nav";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -13,9 +11,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { DashboardNav } from "@/components/dashboard-nav";
-import { useAuth } from "@/lib/auth-context";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/lib/auth-context";
+import { LogOut, Menu } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export function DashboardHeader() {
   const { user, logout } = useAuth();

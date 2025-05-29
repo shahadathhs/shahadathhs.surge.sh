@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { BlogList } from "@/components/blog-list";
+import { BlogList } from "@/components/blog/blog-list";
 // import { BlogSearch } from "@/components/blog-search";
 // import { CategoryFilter } from "@/components/category-filter";
 import { Skeleton } from "@/components/ui/skeleton";

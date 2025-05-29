@@ -1,31 +1,32 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useEffect } from "react"
-import { useRouter, usePathname } from "next/navigation"
-import { DashboardNav } from "@/components/dashboard-nav"
-import { DashboardHeader } from "@/components/dashboard-header"
-import { useAuth } from "@/lib/auth-context"
+import { DashboardHeader } from "@/components/dashboard/dashboard-header";
+import { DashboardNav } from "@/components/dashboard/dashboard-nav";
+import { useAuth } from "@/lib/auth-context";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const { user, isLoading } = useAuth()
-  const router = useRouter()
-  const pathname = usePathname()
-  const isAuthPage = pathname === "/dashboard/login" || pathname === "/dashboard/register"
+  const { user, isLoading } = useAuth();
+  const router = useRouter();
+  const pathname = usePathname();
+  const isAuthPage =
+    pathname === "/dashboard/login" || pathname === "/dashboard/register";
 
   useEffect(() => {
     if (!isLoading && !user && !isAuthPage) {
-      router.push("/dashboard/login")
+      router.push("/dashboard/login");
     }
-  }, [user, isLoading, router, isAuthPage])
+  }, [user, isLoading, router, isAuthPage]);
 
   if (isAuthPage) {
-    return <>{children}</>
+    return <>{children}</>;
   }
 
   if (isLoading) {
@@ -33,11 +34,11 @@ export default function DashboardLayout({
       <div className="flex h-screen items-center justify-center">
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
       </div>
-    )
+    );
   }
 
   if (!user) {
-    return null
+    return null;
   }
 
   return (
@@ -47,8 +48,10 @@ export default function DashboardLayout({
         <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto border-r md:sticky md:block">
           <DashboardNav />
         </aside>
-        <main className="flex w-full flex-col overflow-hidden py-6">{children}</main>
+        <main className="flex w-full flex-col overflow-hidden py-6">
+          {children}
+        </main>
       </div>
     </div>
-  )
+  );
 }

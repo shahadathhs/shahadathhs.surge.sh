@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { BlogsTable } from "@/components/blogs-table"
+import { BlogsTable } from "@/components/blog/blogs-table"
 
 export default function BlogsPage() {
   return (
