@@ -1,3 +1,4 @@
+import FloatingActionMenu from "@/components/shared/FloatingActionMenu";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/nav/Navbar";
 
@@ -16,6 +17,9 @@ export default function PublicLayout({
 
       {/* footer */}
       <Footer />
+
+      {/* Floating Action Menu */}
+      <FloatingActionMenu />
     </main>
   );
 }
