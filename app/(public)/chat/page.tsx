@@ -17,13 +17,13 @@ export default function ChatBot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const scrollToBottom = () => {
+  //   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  // };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [history]);
+  // useEffect(() => {
+  //   scrollToBottom();
+  // }, [history]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,12 +77,12 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="my-10 py-10 px-4 md:px-16 border rounded relative overflow-clip">
+      <div className="container mx-auto max-w-4xl">
         {/* Header */}
-        <div className="mb-8">
-          <Link href="/" className="inline-flex items-center mb-6">
-            <Button variant="ghost" size="sm">
+        <div className="mb-6">
+          <Link href="/" className="flex justify-center">
+            <Button variant="ghost" className="mb-4">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Portfolio
             </Button>
@@ -100,7 +100,7 @@ export default function ChatBot() {
           <BorderBeam duration={40} size={300} />
 
           {/* Messages Area */}
-          <div className="h-[600px] overflow-y-auto p-4 space-y-6">
+          <div className="h-[400px] overflow-y-auto p-4 space-y-6">
             {history.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-center">
                 <div className="bg-blue-100 dark:bg-blue-900/20 p-4 rounded-full mb-4">
@@ -212,6 +212,9 @@ export default function ChatBot() {
           </div>
         </div>
       </div>
+
+      {/* border beam */}
+      <BorderBeam duration={40} size={300} />
     </div>
   );
 }
