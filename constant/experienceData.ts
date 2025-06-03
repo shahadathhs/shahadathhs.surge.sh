@@ -16,7 +16,7 @@ export const experienceData: TimelineEntry[] = [
       "Contributed to both frontend and backend development in a large-scale MERN stack project.",
       "Built reusable components and REST APIs using React.js, Remix, Express.js, Node.js, and MongoDB.",
       "Managed and configured a large-scale Nx monorepo to optimize modularity and scalability.",
-      "Led a small frontend team, facilitating collaboration and improving productivity.",
+      "Led a frontend team, facilitating collaboration and improving productivity.",
     ],
   },
   {
