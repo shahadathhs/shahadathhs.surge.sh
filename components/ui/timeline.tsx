@@ -33,9 +33,9 @@ export const Timeline = ({ data }: TimelineProps) => {
             My Tech Journey
           </h2>
           <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base max-w-2xl">
-            Over the past 1.5 years, I've grown through hands-on experience and
-            real-world projects. Here’s a look at some key milestones that
-            shaped my path so far. Always open to exciting opportunities—let’s
+            Over the past 1.5 years, I&apos;ve grown through hands-on experience and
+            real-world projects. Here&apos;s a look at some key milestones that
+            shaped my path so far. Always open to exciting opportunities—let&apos;s
             connect!
           </p>
         </div>
