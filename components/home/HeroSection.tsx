@@ -85,7 +85,7 @@ export default function HeroSection() {
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-xl md:text-3xl font-normal text-slate-700 dark:text-slate-300"
         >
           <Typewriter
-            words={["Backend Developer (Node.js)", "MERN Stack Developer"]}
+            words={["Backend Developer (Node.js)", "Aspiring Software Engineer"]}
             loop={Infinity}
             cursor
             typeSpeed={100}
@@ -146,9 +146,21 @@ export default function HeroSection() {
           </Button>
         </motion.div>
 
-        <div className="flex items-center justify-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 1.5,
+          }}
+          className="flex items-center justify-center"
+        >
           <SocialLinks />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

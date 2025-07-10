@@ -8,7 +8,20 @@ export interface TimelineEntry {
 
 export const experienceData: TimelineEntry[] = [
   {
-    title: 'Nov 2024 – Mar 2025',
+    title: 'July 2025 – Present',
+    company: 'Softvence Agency',
+    location: 'Dhaka, Bangladesh · On-site',
+    designation: 'Back End Developer',
+    responsibilities: [
+      'Building and maintaining scalable RESTful APIs using NestJS and TypeScript.',
+      'Working with Drizzle ORM and Prisma for efficient, type-safe database access.',
+      'Designing and managing relational schemas in PostgreSQL.',
+      'Collaborating with the frontend team to deliver production-ready features.',
+      'Implementing best practices for code quality, testing, and documentation.',
+    ],
+  },
+  {
+    title: 'Nov 2024 – Apr 2025',
     company: 'Monster Studio',
     location: 'Chattogram, Bangladesh · On-site',
     designation: 'Web Developer',

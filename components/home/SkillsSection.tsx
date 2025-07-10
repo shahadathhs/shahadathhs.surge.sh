@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 import {
+  IconCone2,
   IconDatabase,
   IconLanguage,
   IconPackage,
-  IconSchool,
   IconServer,
   IconStackFront,
   IconTerminal2,
@@ -20,30 +20,52 @@ export default function SkillsSection() {
   }> = [
     { title: "Languages", description: ["JavaScript", "TypeScript"] },
     { title: "Backend", description: ["Node.js", "Express", "Nest.js"] },
-    { title: "Frontend", description: ["React", "React Router V7", "Next.js"] },
     {
       title: "Databases",
-      description: ["MongoDB", "Mongoose", "PostgreSQL", "Prisma"],
+      description: ["MongoDB", "PostgreSQL"],
+    },
+    {
+      title: "ORMs & ODMs",
+      description: ["Prisma", "Drizzle", "Mongoose"],
     },
     { title: "Authentication", description: ["JWT", "OAuth 2"] },
-    { title: "Testing", description: ["Jest", "Supertest"] },
+    { title: "API Testing", description: ["Jest", "Supertest"] },
+    { title: "API Documentation", description: ["Postman", "Swagger", "OpenAPI"] },
     {
-      title: "Tools",
-      description: ["Git", "Postman", "Render", "Vercel"],
+      title: 'VCS & CI/CD',
+      description: ["Git", "GitHub", "GitHub Actions"],  
     },
-    { title: "Monorepo Tools", description: ["Turborepo", "Nx"] },
+    {
+      title: 'Containerization',
+      description: ["Docker"],
+    },
+    {
+      title: "Package Manager",
+      description: ["npm", "pnpm"],
+    },
+    {
+      title: "Monorepo Tools",
+      description: ["Nx", "Turborepo"],
+    },
+    {
+      title: "Dev Tools",
+      description: ["Prettier", "Eslint", "Warp", "VS Code"],
+    },
   ];
 
   const iconMap: Record<string, React.ReactNode> = {
     Languages: <IconLanguage className="h-8 w-8" />,
-    Frontend: <IconStackFront />,
     Backend: <IconServer className="h-8 w-8" />,
     Databases: <IconDatabase className="h-8 w-8" />,
-    Testing: <IconTestPipe className="h-8 w-8" />,
-    Tools: <IconTools className="h-8 w-8" />,
-    "Monorepo Tools": <IconTerminal2 className="h-8 w-8" />,
-    Authentication: <IconSchool className="h-8 w-8" />,
+    "ORMs & ODMs": <IconStackFront className="h-8 w-8" />,
+    Authentication: <IconTestPipe className="h-8 w-8" />,
+    "API Testing": <IconTestPipe className="h-8 w-8" />,
+    "API Documentation": <IconTerminal2 className="h-8 w-8" />,
+    "VCS & CI/CD": <IconPackage className="h-8 w-8" />,
+    "Containerization": <IconCone2 className="h-8 w-8" />,
     "Package Manager": <IconPackage className="h-8 w-8" />,
+    "Monorepo Tools": <IconPackage className="h-8 w-8" />,
+    "Dev Tools": <IconTools className="h-8 w-8" />,
   };
 
   return (
@@ -90,8 +112,9 @@ const Skill = ({ title, description, icon, index }: SkillProps) => (
   <div
     className={cn(
       "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
-      (index === 0 || index === 4) && "lg:border-l",
-      index < 4 && "lg:border-b"
+      (index === 0 || index === 4 || index === 8) && "lg:border-l",
+      index < 4 && "lg:border-b lg:border-t",
+      index > 7 && "lg:border-b lg:border-t"
     )}
   >
     {/* hover overlay */}

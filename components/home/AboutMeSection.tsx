@@ -12,18 +12,6 @@ import {
 } from "../ui/card";
 
 const features = [
-  // {
-  //   title: "Fullstack MERN Development",
-  //   description:
-  //     "Building robust applications using MongoDB, Express, React (with React Router v7), and Node.js.",
-  //   icon: Server,
-  // },
-  // {
-  //   title: "Next.js",
-  //   description:
-  //     "Creating fast, SEO-friendly apps with server-side rendering, dynamic routing, and optimized performance.",
-  //   icon: Database,
-  // },
   {
     title: "API Design",
     description: "Creating RESTful APIs for seamless data exchange.",
@@ -76,19 +64,11 @@ export default function AboutMeSection() {
             transition={{ duration: 0.6 }}
           >
             <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base">
-              I’m a passionate MERN stack developer with a strong focus on
-              backend development. I specialize in building scalable, efficient,
-              and secure server-side applications using Node.js, Express,
-              MongoDB, and modern frontend tools like React Router V7 and
-              Next.js. I’m deeply committed to mastering backend architecture,
-              API security, database design, and real-world system design. I
-              also craft smooth client-side experiences using React Router v7
-              and server-side rendering with Next.js. My goal is to become a
-              highly skilled engineer capable of developing robust, full-stack
-              systems and contributing to both front-end and back-end
-              infrastructures. I’m excited to keep learning, growing, and
-              collaborating with innovative teams that value clean code,
-              performance, and modern engineering best practices.
+              Hi, I'm Shahadath Hossen Sajib — a backend developer passionate about building clean, scalable, and maintainable systems. 
+              I currently work at a service-based company where I develop APIs and backend features using NestJS, Drizzle ORM, Prisma, and PostgreSQL.
+              Starting my journey with the MERN stack, I gradually found my interest in the backend ecosystem — working with databases, designing APIs, and focusing on performance and clean architecture.
+              Outside of work, I’m actively learning advanced NestJS patterns, PostgreSQL internals, and data structures & algorithms to sharpen my problem-solving and system design skills. I also love working on side projects that challenge me and help me grow as a developer.
+              I’m always eager to explore new technologies, improve my craft, and collaborate on meaningful products.
             </p>
           </motion.div>
 
