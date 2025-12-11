@@ -1,9 +1,8 @@
 'use server';
 
-import { Blog, BlogDocument } from '@/lib/models';
+import { Blog } from '@/lib/models';
 import { serialize, slugify } from '@/lib/utils';
 import dbConnect from './dbConnect';
-import { FilterQuery } from 'mongoose';
 
 export async function getFeaturedBlogs() {
   await dbConnect();
@@ -17,8 +16,7 @@ export async function getFeaturedBlogs() {
 export async function getAllBlogs(query = '', category = '') {
   await dbConnect();
 
-  //@ts-nocheck
-  const filter: FilterQuery<BlogDocument> = {};
+  const filter: Record<string, unknown> = {};
 
   if (query) {
     filter.$or = [
