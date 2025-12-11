@@ -1,7 +1,9 @@
 {
   "name": "shahadathhs-portfolio",
-  "version": "0.2.0",
+  "version": "0.3.0",
+  "author": "https://github.com/shahadathhs",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
