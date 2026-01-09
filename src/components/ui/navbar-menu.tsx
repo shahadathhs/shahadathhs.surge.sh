@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
-import { motion } from "motion/react";
-import Image from "next/image";
+import React from 'react';
+import { motion } from 'motion/react';
+import Image from 'next/image';
 
 const transition = {
-  type: "spring" as const,
+  type: 'spring' as const,
   mass: 0.5,
   damping: 11.5,
   stiffness: 100,
@@ -109,7 +109,10 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }:  React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+export const HoveredLink = ({
+  children,
+  ...rest
+}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
   return (
     <a
       {...rest}

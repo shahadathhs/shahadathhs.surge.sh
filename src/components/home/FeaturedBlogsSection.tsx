@@ -1,16 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { getFeaturedBlogs } from "@/lib/blog-service";
-import { nanoid } from "nanoid";
+} from '@/components/ui/card';
+import { getFeaturedBlogs } from '@/lib/blog-service';
+import { nanoid } from 'nanoid';
 
 export default async function FeaturedBlogsSection() {
   const blogs = await getFeaturedBlogs();
@@ -41,7 +41,7 @@ export default async function FeaturedBlogsSection() {
               <div className="relative h-48 w-full">
                 <Image
                   src={
-                    blog.thumbnailUrl || "/placeholder.svg?height=200&width=400"
+                    blog.thumbnailUrl || '/placeholder.svg?height=200&width=400'
                   }
                   alt={blog.title}
                   fill

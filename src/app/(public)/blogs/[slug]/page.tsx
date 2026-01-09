@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { getBlogBySlug } from "@/lib/blog-service";
-import { Blog } from "@/lib/models";
-import { ArrowLeft } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { Button } from '@/components/ui/button';
+import { getBlogBySlug } from '@/lib/blog-service';
+import { Blog } from '@/lib/models';
+import { ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export async function generateMetadata({
   params,
@@ -16,8 +16,8 @@ export async function generateMetadata({
 
   if (!blog) {
     return {
-      title: "Blog Not Found",
-      description: "The requested blog post could not be found",
+      title: 'Blog Not Found',
+      description: 'The requested blog post could not be found',
     };
   }
 
@@ -57,10 +57,10 @@ export default async function BlogPage({
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground">
-                  {new Date(blog.createdAt).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
+                  {new Date(blog.createdAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
                   })}
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default async function BlogPage({
 
           <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-lg">
             <Image
-              src={blog.thumbnailUrl || "/placeholder.svg?height=400&width=800"}
+              src={blog.thumbnailUrl || '/placeholder.svg?height=400&width=800'}
               alt={blog.title}
               fill
               className="object-cover"

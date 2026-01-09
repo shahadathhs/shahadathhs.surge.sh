@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { quickLinks } from "@/constant/navigationLinks";
-import { ArrowUp, Check, Copy, FileText } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
-import SocialLinks from "./SocialLinks";
+import { Button } from '@/components/ui/button';
+import { quickLinks } from '@/constant/navigationLinks';
+import { ArrowUp, Check, Copy, FileText } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
+import SocialLinks from './SocialLinks';
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
-  const email = "shahadathhossensajib732@gmail.com";
+  const email = 'shahadathhossensajib732@gmail.com';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -20,7 +20,7 @@ export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 

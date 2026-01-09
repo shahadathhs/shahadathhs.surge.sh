@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { certificates } from "@/constant/certificates";
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { BorderBeam } from "../magicui/border-beam";
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { certificates } from '@/constant/certificates';
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { BorderBeam } from '../magicui/border-beam';
 
 export default function CertificateTimeline() {
   return (
@@ -32,7 +32,7 @@ export default function CertificateTimeline() {
                 <div className="flex gap-3">
                   <div className="h-12 w-12 rounded bg-muted flex items-center justify-center overflow-hidden">
                     <Image
-                      src={certificate.logo || "/placeholder.svg"}
+                      src={certificate.logo || '/placeholder.svg'}
                       alt={certificate.organization}
                       width={60}
                       height={60}
@@ -51,7 +51,7 @@ export default function CertificateTimeline() {
                     </p>
                     {certificate.credentialId && (
                       <p className="text-xs text-muted-foreground">
-                        <span className="font-bold">Credential ID:</span>{" "}
+                        <span className="font-bold">Credential ID:</span>{' '}
                         {certificate.credentialId}
                       </p>
                     )}

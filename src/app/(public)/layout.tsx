@@ -1,6 +1,6 @@
-import FloatingActionMenu from "@/components/shared/FloatingActionMenu";
-import Footer from "@/components/shared/Footer";
-import Navbar from "@/components/shared/nav/Navbar";
+import FloatingActionMenu from '@/components/shared/FloatingActionMenu';
+import Footer from '@/components/shared/Footer';
+import Navbar from '@/components/shared/nav/Navbar';
 
 export default function PublicLayout({
   children,

@@ -1,38 +1,38 @@
-"use client";
+'use client';
 
-import { Database, Server, ShieldCheck, User } from "lucide-react";
-import { motion } from "motion/react";
-import { WarpBackground } from "../magicui/warp-background";
+import { Database, Server, ShieldCheck, User } from 'lucide-react';
+import { motion } from 'motion/react';
+import { WarpBackground } from '../magicui/warp-background';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from '../ui/card';
 
 const features = [
   {
-    title: "API Design",
-    description: "Creating RESTful APIs for seamless data exchange.",
+    title: 'API Design',
+    description: 'Creating RESTful APIs for seamless data exchange.',
     icon: Server,
   },
   {
-    title: "Robust Databases",
+    title: 'Robust Databases',
     description:
-      "Crafting optimized schemas and queries for performant data storage.",
+      'Crafting optimized schemas and queries for performant data storage.',
     icon: Database,
   },
   {
-    title: "Security First",
+    title: 'Security First',
     description:
-      "Implementing authentication, authorization, and secure API practices.",
+      'Implementing authentication, authorization, and secure API practices.',
     icon: ShieldCheck,
   },
   {
-    title: "Collaborative Excellence",
+    title: 'Collaborative Excellence',
     description:
-      "Thriving in team environments with clean code and peer reviews.",
+      'Thriving in team environments with clean code and peer reviews.',
     icon: User,
   },
 ];
@@ -64,11 +64,19 @@ export default function AboutMeSection() {
             transition={{ duration: 0.6 }}
           >
             <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base">
-              Hi, I'm Shahadath Hossen Sajib — a backend developer passionate about building clean, scalable, and maintainable systems. 
-              I currently work at a service-based company where I develop APIs and backend features using NestJS, Drizzle ORM, Prisma, and PostgreSQL.
-              Starting my journey with the MERN stack, I gradually found my interest in the backend ecosystem — working with databases, designing APIs, and focusing on performance and clean architecture.
-              Outside of work, I’m actively learning advanced NestJS patterns, PostgreSQL internals, and data structures & algorithms to sharpen my problem-solving and system design skills. I also love working on side projects that challenge me and help me grow as a developer.
-              I’m always eager to explore new technologies, improve my craft, and collaborate on meaningful products.
+              Hi, I'm Shahadath Hossen Sajib — a backend developer passionate
+              about building clean, scalable, and maintainable systems. I
+              currently work at a service-based company where I develop APIs and
+              backend features using NestJS, Drizzle ORM, Prisma, and
+              PostgreSQL. Starting my journey with the MERN stack, I gradually
+              found my interest in the backend ecosystem — working with
+              databases, designing APIs, and focusing on performance and clean
+              architecture. Outside of work, I’m actively learning advanced
+              NestJS patterns, PostgreSQL internals, and data structures &
+              algorithms to sharpen my problem-solving and system design skills.
+              I also love working on side projects that challenge me and help me
+              grow as a developer. I’m always eager to explore new technologies,
+              improve my craft, and collaborate on meaningful products.
             </p>
           </motion.div>
 

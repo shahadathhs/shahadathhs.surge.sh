@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { BorderBeam } from "@/components/magicui/border-beam";
-import { Button } from "@/components/ui/button";
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 import {
   ArrowLeft,
   Download,
@@ -16,23 +16,23 @@ import {
   Linkedin,
   QrCode,
   UserPlus,
-} from "lucide-react";
-import Link from "next/link";
-import QRCode from "qrcode";
-import { useEffect, useState } from "react";
+} from 'lucide-react';
+import Link from 'next/link';
+import QRCode from 'qrcode';
+import { useEffect, useState } from 'react';
 
 export default function ReferralPage() {
-  const [qrCodeUrl, setQrCodeUrl] = useState("");
+  const [qrCodeUrl, setQrCodeUrl] = useState('');
 
   const profileData = {
-    name: "Shahadath Hossen Sajib",
-    title: "Backend Developer",
-    email: "shahadathhossensajib732@gmail.com",
-    linkedin: "https://www.linkedin.com/in/shahadathhs",
-    phone: "+8801405663070",
-    github: "https://github.com/shahadathhs",
-    website: "https://shahadathhs.vercel.app",
-    resume: "/resume.pdf",
+    name: 'Shahadath Hossen Sajib',
+    title: 'Backend Developer',
+    email: 'shahadathhossensajib732@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/shahadathhs',
+    phone: '+8801405663070',
+    github: 'https://github.com/shahadathhs',
+    website: 'https://shahadathhs.vercel.app',
+    resume: '/resume.pdf',
   };
 
   useEffect(() => {
@@ -50,20 +50,20 @@ export default function ReferralPage() {
           width: 300,
           margin: 2,
           color: {
-            dark: "#000000",
-            light: "#FFFFFF",
+            dark: '#000000',
+            light: '#FFFFFF',
           },
         });
         setQrCodeUrl(url);
       } catch (err) {
-        console.error("Error generating QR code:", err);
+        console.error('Error generating QR code:', err);
       }
     };
 
     generateQR();
   }, []);
 
-  const fileId = "1dtZCEgZyof-qrUreeVpXDlOovosegpuf";
+  const fileId = '1dtZCEgZyof-qrUreeVpXDlOovosegpuf';
   const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
 
   const downloadVCard = () => {
@@ -76,11 +76,11 @@ TEL:${profileData.phone}
 URL:${profileData.website}
 END:VCARD`;
 
-    const blob = new Blob([vCardData], { type: "text/vcard" });
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = url;
-    link.download = `${profileData.name.replace(" ", "_")}.vcf`;
+    link.download = `${profileData.name.replace(' ', '_')}.vcf`;
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -119,7 +119,7 @@ END:VCARD`;
               {qrCodeUrl && (
                 <div className="flex justify-center mb-4">
                   <img
-                    src={qrCodeUrl || "/placeholder.svg"}
+                    src={qrCodeUrl || '/placeholder.svg'}
                     alt="Networking QR Code"
                     className="rounded-lg shadow-md"
                   />

@@ -8,7 +8,10 @@ export async function POST(request: NextRequest) {
     const { email, password } = body;
 
     if (!email || !password) {
-      return NextResponse.json({ error: 'Email and password are required' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Email and password are required' },
+        { status: 400 },
+      );
     }
 
     const user = await db.user.findUnique({
@@ -16,16 +19,26 @@ export async function POST(request: NextRequest) {
     });
 
     if (!user) {
-      return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
+      return NextResponse.json(
+        { error: 'Invalid credentials' },
+        { status: 401 },
+      );
     }
 
     const isPasswordValid = await comparePassword(password, user.password);
 
     if (!isPasswordValid) {
-      return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
+      return NextResponse.json(
+        { error: 'Invalid credentials' },
+        { status: 401 },
+      );
     }
 
-    const token = signToken({ userId: user.id, email: user.email, role: user.role });
+    const token = signToken({
+      userId: user.id,
+      email: user.email,
+      role: user.role,
+    });
 
     const response = NextResponse.json({
       id: user.id,

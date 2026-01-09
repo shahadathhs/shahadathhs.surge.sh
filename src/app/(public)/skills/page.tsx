@@ -1,9 +1,9 @@
-import SkillsSection from "@/components/home/SkillsSection";
-import type { Metadata } from "next";
+import SkillsSection from '@/components/home/SkillsSection';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Skills | Portfolio",
-  description: "Know about my skills",
+  title: 'Skills | Portfolio',
+  description: 'Know about my skills',
 };
 
 export default function ProjectsPage() {

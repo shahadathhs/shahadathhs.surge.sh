@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { MessageCircle, QrCode, Sparkles, X } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { MessageCircle, QrCode, Sparkles, X } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function FloatingActionMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +12,9 @@ export default function FloatingActionMenu() {
   const menuItems = [
     {
       icon: QrCode,
-      label: "QR Network",
-      href: "/referral",
-      color: "bg-blue-500 hover:bg-blue-600",
+      label: 'QR Network',
+      href: '/referral',
+      color: 'bg-blue-500 hover:bg-blue-600',
     },
     // {
     //   icon: Terminal,
@@ -24,9 +24,9 @@ export default function FloatingActionMenu() {
     // },
     {
       icon: MessageCircle,
-      label: "AI Chat",
-      href: "/chat",
-      color: "bg-purple-500 hover:bg-purple-600",
+      label: 'AI Chat',
+      href: '/chat',
+      color: 'bg-purple-500 hover:bg-purple-600',
     },
   ];
 
@@ -40,10 +40,10 @@ export default function FloatingActionMenu() {
               <div
                 key={item.label}
                 className={cn(
-                  "transform transition-all duration-300 ease-out",
+                  'transform transition-all duration-300 ease-out',
                   isOpen
-                    ? "translate-y-0 opacity-100 scale-100"
-                    : "translate-y-4 opacity-0 scale-95"
+                    ? 'translate-y-0 opacity-100 scale-100'
+                    : 'translate-y-4 opacity-0 scale-95',
                 )}
                 style={{
                   transitionDelay: `${index * 100}ms`,
@@ -53,8 +53,8 @@ export default function FloatingActionMenu() {
                   <Button
                     size="lg"
                     className={cn(
-                      "rounded-full shadow-lg text-white border-0 h-10 w-10 p-0",
-                      item.color
+                      'rounded-full shadow-lg text-white border-0 h-10 w-10 p-0',
+                      item.color,
                     )}
                     onClick={() => setIsOpen(false)}
                   >
@@ -75,10 +75,10 @@ export default function FloatingActionMenu() {
           size="lg"
           onClick={() => setIsOpen(!isOpen)}
           className={cn(
-            "rounded-full shadow-lg transition-all duration-300 h-12 w-12 p-0",
+            'rounded-full shadow-lg transition-all duration-300 h-12 w-12 p-0',
             isOpen
-              ? "bg-red-500 hover:bg-red-600 rotate-45"
-              : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+              ? 'bg-red-500 hover:bg-red-600 rotate-45'
+              : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700',
           )}
         >
           {isOpen ? (

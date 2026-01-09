@@ -1,4 +1,4 @@
-import { Loader2 } from "lucide-react";
+import { Loader2 } from 'lucide-react';
 
 export default function Loading() {
   return (
@@ -22,8 +22,8 @@ export default function Loading() {
         <p className="text-muted-foreground">
           {
             [
-              "Fetching all my skills details...",
-              "Just a moment while everything loads...",
+              'Fetching all my skills details...',
+              'Just a moment while everything loads...',
             ][Math.floor(Math.random() * 5)]
           }
         </p>

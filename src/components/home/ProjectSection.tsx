@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
-import { projects } from "@/constant/projectData";
-import ProjectCard from "../card/ProjectCard";
+import { projects } from '@/constant/projectData';
+import ProjectCard from '../card/ProjectCard';
 
 export default function ProjectSection() {
   // Only show the first two projects on the home page

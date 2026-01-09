@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { BorderBeam } from "@/components/magicui/border-beam";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import type { TMessage } from "@/types/chatMessage";
-import { ArrowLeft, Bot, Send, User } from "lucide-react";
-import Link from "next/link";
-import type React from "react";
-import { useRef, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import type { TMessage } from '@/types/chatMessage';
+import { ArrowLeft, Bot, Send, User } from 'lucide-react';
+import Link from 'next/link';
+import type React from 'react';
+import { useRef, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function ChatBot() {
   const [history, setHistory] = useState<TMessage[]>([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -21,31 +21,31 @@ export default function ChatBot() {
     e.preventDefault();
     if (!input.trim() || loading) return;
 
-    const userMsg = { role: "user", text: input };
+    const userMsg = { role: 'user', text: input };
     const newHistory = [...history, userMsg];
     setHistory(newHistory);
-    setInput("");
+    setInput('');
     setLoading(true);
 
     // Reset textarea height
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = 'auto';
     }
 
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ history: newHistory }),
       });
       const { answer } = await res.json();
 
-      setHistory((h) => [...h, { role: "bot", text: answer }]);
+      setHistory((h) => [...h, { role: 'bot', text: answer }]);
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error);
       setHistory((h) => [
         ...h,
-        { role: "bot", text: "Sorry, something went wrong. Please try again." },
+        { role: 'bot', text: 'Sorry, something went wrong. Please try again.' },
       ]);
     } finally {
       setLoading(false);
@@ -53,7 +53,7 @@ export default function ChatBot() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSubmit(e);
     }
@@ -64,8 +64,8 @@ export default function ChatBot() {
 
     // Auto-resize textarea
     const textarea = e.target;
-    textarea.style.height = "auto";
-    textarea.style.height = Math.min(textarea.scrollHeight, 200) + "px";
+    textarea.style.height = 'auto';
+    textarea.style.height = Math.min(textarea.scrollHeight, 200) + 'px';
   };
 
   return (
@@ -102,8 +102,8 @@ export default function ChatBot() {
                   Welcome to SajibBot!
                 </h3>
                 <p className="text-muted-foreground max-w-md">
-                  I&apos;m here to help you learn about Sajib&apos;s background, skills,
-                  and projects. Feel free to ask me anything!
+                  I&apos;m here to help you learn about Sajib&apos;s background,
+                  skills, and projects. Feel free to ask me anything!
                 </p>
               </div>
             )}
@@ -111,9 +111,9 @@ export default function ChatBot() {
             {history.map((message, index) => (
               <div
                 key={index}
-                className={`flex gap-3 ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                {message.role === "bot" && (
+                {message.role === 'bot' && (
                   <Avatar className="h-8 w-8 bg-blue-100 dark:bg-blue-900/20">
                     <AvatarFallback>
                       <Bot className="h-4 w-4 text-blue-600 dark:text-blue-400" />
@@ -123,9 +123,9 @@ export default function ChatBot() {
 
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 ${
-                    message.role === "user"
-                      ? "bg-blue-600 text-white ml-auto"
-                      : "bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    message.role === 'user'
+                      ? 'bg-blue-600 text-white ml-auto'
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100'
                   }`}
                 >
                   <div className="prose dark:prose-invert max-w-none">
@@ -135,7 +135,7 @@ export default function ChatBot() {
                   </div>
                 </div>
 
-                {message.role === "user" && (
+                {message.role === 'user' && (
                   <Avatar className="h-8 w-8 bg-gray-100 dark:bg-gray-700">
                     <AvatarFallback>
                       <User className="h-4 w-4 text-gray-600 dark:text-gray-400" />
@@ -158,11 +158,11 @@ export default function ChatBot() {
                       <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                       <div
                         className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "0.1s" }}
+                        style={{ animationDelay: '0.1s' }}
                       ></div>
                       <div
                         className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "0.2s" }}
+                        style={{ animationDelay: '0.2s' }}
                       ></div>
                     </div>
                     <span className="text-sm text-gray-500 ml-2">

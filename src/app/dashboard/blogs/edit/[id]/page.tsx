@@ -1,7 +1,7 @@
-import { BlogForm } from "@/components/blog/blog-form";
-import { getBlogById } from "@/lib/blog-service";
-import { Blog } from "@/lib/models";
-import { notFound } from "next/navigation";
+import { BlogForm } from '@/components/blog/blog-form';
+import { getBlogById } from '@/lib/blog-service';
+import { Blog } from '@/lib/models';
+import { notFound } from 'next/navigation';
 
 export default async function EditBlogPage({
   params,

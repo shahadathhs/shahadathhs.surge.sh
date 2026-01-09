@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import Link from "next/link";
-import { AlertCircle, Home, RefreshCw } from "lucide-react";
+import { useEffect } from 'react';
+import Link from 'next/link';
+import { AlertCircle, Home, RefreshCw } from 'lucide-react';
 
-import { Button } from "@/components/ui/button";
-import { Metadata } from "next";
+import { Button } from '@/components/ui/button';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Oops! Something went wrong",
+  title: 'Oops! Something went wrong',
   description:
-    "An unexpected error occurred. Please try again or contact support if the issue persists.",
+    'An unexpected error occurred. Please try again or contact support if the issue persists.',
 };
 
 export default function Error({

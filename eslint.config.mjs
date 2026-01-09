@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import pluginReact from 'eslint-plugin-react';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
@@ -17,6 +18,14 @@ export default defineConfig([
     plugins: {
       js,
       react: pluginReact,
+    },
+    rules: {
+      'no-console': [
+        'warn',
+        { allow: ['warn', 'error', 'info', 'group', 'groupEnd'] },
+      ],
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'no-unused-expressions': 'error',
     },
   },
 
@@ -35,4 +44,19 @@ export default defineConfig([
       'react/react-in-jsx-scope': 'off',
     },
   },
+
+  // TypeScript config
+  {
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+    rules: {
+      '@typescript-eslint/no-empty-object-type': 'warn',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-namespace': 'warn',
+      'no-undef': 'off',
+    },
+  },
+
+  // Prettier config
+  eslintPluginPrettierRecommended,
 ]);

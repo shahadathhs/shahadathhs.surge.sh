@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 import {
   IconCone2,
   IconDatabase,
@@ -9,47 +9,50 @@ import {
   IconTerminal2,
   IconTestPipe,
   IconTools,
-} from "@tabler/icons-react";
-import { BorderBeam } from "../magicui/border-beam";
-import { Badge } from "../ui/badge";
+} from '@tabler/icons-react';
+import { BorderBeam } from '../magicui/border-beam';
+import { Badge } from '../ui/badge';
 
 export default function SkillsSection() {
   const skills: Array<{
     title: string;
     description: string[];
   }> = [
-    { title: "Languages", description: ["JavaScript", "TypeScript"] },
-    { title: "Backend", description: ["Node.js", "Express", "Nest.js"] },
+    { title: 'Languages', description: ['JavaScript', 'TypeScript'] },
+    { title: 'Backend', description: ['Node.js', 'Express', 'Nest.js'] },
     {
-      title: "Databases",
-      description: ["MongoDB", "PostgreSQL"],
+      title: 'Databases',
+      description: ['MongoDB', 'PostgreSQL'],
     },
     {
-      title: "ORMs & ODMs",
-      description: ["Prisma", "Drizzle", "Mongoose"],
+      title: 'ORMs & ODMs',
+      description: ['Prisma', 'Drizzle', 'Mongoose'],
     },
-    { title: "Authentication", description: ["JWT", "OAuth 2"] },
-    { title: "API Testing", description: ["Jest", "Supertest"] },
-    { title: "API Documentation", description: ["Postman", "Swagger", "OpenAPI"] },
+    { title: 'Authentication', description: ['JWT', 'OAuth 2'] },
+    { title: 'API Testing', description: ['Jest', 'Supertest'] },
+    {
+      title: 'API Documentation',
+      description: ['Postman', 'Swagger', 'OpenAPI'],
+    },
     {
       title: 'VCS & CI/CD',
-      description: ["Git", "GitHub", "GitHub Actions"],  
+      description: ['Git', 'GitHub', 'GitHub Actions'],
     },
     {
       title: 'Containerization',
-      description: ["Docker"],
+      description: ['Docker'],
     },
     {
-      title: "Package Manager",
-      description: ["npm", "pnpm"],
+      title: 'Package Manager',
+      description: ['npm', 'pnpm'],
     },
     {
-      title: "Monorepo Tools",
-      description: ["Nx", "Turborepo"],
+      title: 'Monorepo Tools',
+      description: ['Nx', 'Turborepo'],
     },
     {
-      title: "Dev Tools",
-      description: ["Prettier", "Eslint", "Warp", "VS Code"],
+      title: 'Dev Tools',
+      description: ['Prettier', 'Eslint', 'Warp', 'VS Code'],
     },
   ];
 
@@ -57,15 +60,15 @@ export default function SkillsSection() {
     Languages: <IconLanguage className="h-8 w-8" />,
     Backend: <IconServer className="h-8 w-8" />,
     Databases: <IconDatabase className="h-8 w-8" />,
-    "ORMs & ODMs": <IconStackFront className="h-8 w-8" />,
+    'ORMs & ODMs': <IconStackFront className="h-8 w-8" />,
     Authentication: <IconTestPipe className="h-8 w-8" />,
-    "API Testing": <IconTestPipe className="h-8 w-8" />,
-    "API Documentation": <IconTerminal2 className="h-8 w-8" />,
-    "VCS & CI/CD": <IconPackage className="h-8 w-8" />,
-    "Containerization": <IconCone2 className="h-8 w-8" />,
-    "Package Manager": <IconPackage className="h-8 w-8" />,
-    "Monorepo Tools": <IconPackage className="h-8 w-8" />,
-    "Dev Tools": <IconTools className="h-8 w-8" />,
+    'API Testing': <IconTestPipe className="h-8 w-8" />,
+    'API Documentation': <IconTerminal2 className="h-8 w-8" />,
+    'VCS & CI/CD': <IconPackage className="h-8 w-8" />,
+    Containerization: <IconCone2 className="h-8 w-8" />,
+    'Package Manager': <IconPackage className="h-8 w-8" />,
+    'Monorepo Tools': <IconPackage className="h-8 w-8" />,
+    'Dev Tools': <IconTools className="h-8 w-8" />,
   };
 
   return (
@@ -111,19 +114,19 @@ type SkillProps = {
 const Skill = ({ title, description, icon, index }: SkillProps) => (
   <div
     className={cn(
-      "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
-      (index === 0 || index === 4 || index === 8) && "lg:border-l",
-      index < 4 && "lg:border-b lg:border-t",
-      index > 7 && "lg:border-b lg:border-t"
+      'flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800',
+      (index === 0 || index === 4 || index === 8) && 'lg:border-l',
+      index < 4 && 'lg:border-b lg:border-t',
+      index > 7 && 'lg:border-b lg:border-t',
     )}
   >
     {/* hover overlay */}
     <div
       className={cn(
-        "absolute inset-0 h-full w-full transition duration-200 pointer-events-none",
+        'absolute inset-0 h-full w-full transition duration-200 pointer-events-none',
         index < 4
-          ? "bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent opacity-0 group-hover/feature:opacity-100"
-          : "bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent opacity-0 group-hover/feature:opacity-100"
+          ? 'bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent opacity-0 group-hover/feature:opacity-100'
+          : 'bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent opacity-0 group-hover/feature:opacity-100',
       )}
     />
 
@@ -143,7 +146,7 @@ const Skill = ({ title, description, icon, index }: SkillProps) => (
     {/* render each description item as a badge */}
     <div className="flex flex-wrap gap-2 px-10 relative z-10">
       {description.map((tech) => (
-        <Badge key={tech} variant={"outline"}>
+        <Badge key={tech} variant={'outline'}>
           {tech}
         </Badge>
       ))}

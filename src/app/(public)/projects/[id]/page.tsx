@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import ImageSlider from "@/components/shared/ImageSlider";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { projects } from "@/constant/projectData";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
-import Link from "next/link";
-import { notFound, useParams } from "next/navigation";
+import ImageSlider from '@/components/shared/ImageSlider';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { projects } from '@/constant/projectData';
+import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import Link from 'next/link';
+import { notFound, useParams } from 'next/navigation';
 
 export default function ProjectPage() {
   const { id } = useParams();

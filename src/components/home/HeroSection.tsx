@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { motion } from "motion/react";
-import Link from "next/link";
-import { Typewriter } from "react-simple-typewriter";
-import SocialLinks from "../shared/SocialLinks";
-import { Button } from "../ui/button";
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { Typewriter } from 'react-simple-typewriter';
+import SocialLinks from '../shared/SocialLinks';
+import { Button } from '../ui/button';
 
 export default function HeroSection() {
-  const firstLine = "Hey there, I'm".split(" ");
-  const secondLine = "Shahadath Hossen Sajib".split(" ");
+  const firstLine = "Hey there, I'm".split(' ');
+  const secondLine = 'Shahadath Hossen Sajib'.split(' ');
   const stagger = 0.2; // seconds between each word
   const duration = 0.6; // each word’s animation duration
   const firstTotal = firstLine.length * stagger + duration;
@@ -42,12 +42,12 @@ export default function HeroSection() {
           {firstLine.map((word, i) => (
             <motion.span
               key={`f-${i}`}
-              initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              initial={{ opacity: 0, filter: 'blur(4px)', y: 10 }}
+              animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
               transition={{
                 duration,
                 delay: i * stagger,
-                ease: "easeInOut",
+                ease: 'easeInOut',
               }}
               className="mr-2 inline-block"
             >
@@ -58,12 +58,12 @@ export default function HeroSection() {
           {secondLine.map((word, i) => (
             <motion.span
               key={`s-${i}`}
-              initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              initial={{ opacity: 0, filter: 'blur(4px)', y: 10 }}
+              animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
               transition={{
                 duration,
                 delay: firstTotal + i * stagger,
-                ease: "easeInOut",
+                ease: 'easeInOut',
               }}
               className="mr-2 inline-block"
             >
@@ -85,7 +85,10 @@ export default function HeroSection() {
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-xl md:text-3xl font-normal text-slate-700 dark:text-slate-300"
         >
           <Typewriter
-            words={["Backend Developer (Node.js)", "Aspiring Software Engineer"]}
+            words={[
+              'Backend Developer (Node.js)',
+              'Aspiring Software Engineer',
+            ]}
             loop={Infinity}
             cursor
             typeSpeed={100}

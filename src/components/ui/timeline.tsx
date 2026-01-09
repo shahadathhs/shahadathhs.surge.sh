@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import type { TimelineEntry } from "@/constant/experienceData";
-import { cn } from "@/lib/utils";
-import { CalendarIcon, MapPinIcon } from "lucide-react";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef, useState } from "react";
+import type { TimelineEntry } from '@/constant/experienceData';
+import { cn } from '@/lib/utils';
+import { CalendarIcon, MapPinIcon } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef, useState } from 'react';
 
 interface TimelineProps {
   data: TimelineEntry[];
@@ -16,11 +16,11 @@ export const Timeline = ({ data }: TimelineProps) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 60%", "end 40%"],
+    offset: ['start 60%', 'end 40%'],
   });
 
   // Calculate timeline progress based on scroll
-  const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const progressHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   return (
     <section
@@ -33,10 +33,10 @@ export const Timeline = ({ data }: TimelineProps) => {
             My Tech Journey
           </h2>
           <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base max-w-2xl">
-            Over the past 1.5 years, I&apos;ve grown through hands-on experience and
-            real-world projects. Here&apos;s a look at some key milestones that
-            shaped my path so far. Always open to exciting opportunities—let&apos;s
-            connect!
+            Over the past 1.5 years, I&apos;ve grown through hands-on experience
+            and real-world projects. Here&apos;s a look at some key milestones
+            that shaped my path so far. Always open to exciting
+            opportunities—let&apos;s connect!
           </p>
         </div>
 
@@ -101,7 +101,7 @@ const TimelineEntryComponent = ({
       className="relative mb-16"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: '-100px' }}
       custom={index}
       variants={variants}
     >
@@ -109,10 +109,10 @@ const TimelineEntryComponent = ({
       <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
         <motion.div
           className={cn(
-            "h-8 w-8 rounded-full border-4 border-white dark:border-neutral-950 flex items-center justify-center transition-all duration-300",
+            'h-8 w-8 rounded-full border-4 border-white dark:border-neutral-950 flex items-center justify-center transition-all duration-300',
             isActive
-              ? "bg-blue-500 scale-125"
-              : "bg-neutral-200 dark:bg-neutral-700"
+              ? 'bg-blue-500 scale-125'
+              : 'bg-neutral-200 dark:bg-neutral-700',
           )}
           whileHover={{ scale: 1.2 }}
         />
@@ -121,15 +121,15 @@ const TimelineEntryComponent = ({
       {/* Content card */}
       <div
         className={cn(
-          "ml-12 md:ml-0 md:w-[calc(50%-40px)]",
-          isEven ? "md:mr-auto" : "md:ml-auto"
+          'ml-12 md:ml-0 md:w-[calc(50%-40px)]',
+          isEven ? 'md:mr-auto' : 'md:ml-auto',
         )}
       >
         <motion.div
           className={cn(
-            "bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-100 dark:border-neutral-800 transition-all duration-300",
+            'bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-100 dark:border-neutral-800 transition-all duration-300',
             isActive &&
-              "shadow-xl border-blue-200 dark:border-blue-900 -translate-y-1"
+              'shadow-xl border-blue-200 dark:border-blue-900 -translate-y-1',
           )}
           whileHover={{ y: -5 }}
           onMouseEnter={setActive}

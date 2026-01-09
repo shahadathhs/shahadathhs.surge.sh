@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -15,31 +15,31 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { TextEditor } from "@/components/text-editor";
-import { createBlog, updateBlog } from "@/lib/blog-service";
-import { categories } from "@/constant/blogs";
-import { toast } from "sonner";
+} from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
+import { TextEditor } from '@/components/text-editor';
+import { createBlog, updateBlog } from '@/lib/blog-service';
+import { categories } from '@/constant/blogs';
+import { toast } from 'sonner';
 
 const formSchema = z.object({
-  title: z.string().min(5, { message: "Title must be at least 5 characters" }),
+  title: z.string().min(5, { message: 'Title must be at least 5 characters' }),
   excerpt: z
     .string()
-    .min(10, { message: "Excerpt must be at least 10 characters" }),
-  category: z.string().min(1, { message: "Please select a category" }),
-  thumbnailUrl: z.string().url({ message: "Please enter a valid URL" }),
+    .min(10, { message: 'Excerpt must be at least 10 characters' }),
+  category: z.string().min(1, { message: 'Please select a category' }),
+  thumbnailUrl: z.string().url({ message: 'Please enter a valid URL' }),
   content: z
     .string()
-    .min(50, { message: "Content must be at least 50 characters" }),
+    .min(50, { message: 'Content must be at least 50 characters' }),
 });
 
 type BlogFormValues = z.infer<typeof formSchema>;
@@ -70,11 +70,11 @@ export function BlogForm({ blog }: BlogFormProps) {
           content: blog.content,
         }
       : {
-          title: "",
-          excerpt: "",
-          category: "",
-          thumbnailUrl: "",
-          content: "",
+          title: '',
+          excerpt: '',
+          category: '',
+          thumbnailUrl: '',
+          content: '',
         },
   });
 
@@ -83,22 +83,22 @@ export function BlogForm({ blog }: BlogFormProps) {
     try {
       if (blog) {
         await updateBlog(blog._id, values);
-        toast("Blog updated", {
-          description: "Your blog post has been updated successfully",
+        toast('Blog updated', {
+          description: 'Your blog post has been updated successfully',
         });
       } else {
         await createBlog(values);
-        toast("Blog created", {
-          description: "Your blog post has been created successfully",
+        toast('Blog created', {
+          description: 'Your blog post has been created successfully',
         });
       }
-      router.push("/dashboard/blogs");
+      router.push('/dashboard/blogs');
     } catch (error) {
-      console.log("Error creating/updating blog:", error);
-      toast("Error", {
+      console.log('Error creating/updating blog:', error);
+      toast('Error', {
         description: blog
-          ? "Failed to update blog post"
-          : "Failed to create blog post",
+          ? 'Failed to update blog post'
+          : 'Failed to create blog post',
       });
     } finally {
       setIsSubmitting(false);
@@ -186,7 +186,7 @@ export function BlogForm({ blog }: BlogFormProps) {
               {field.value && (
                 <div className="mt-2 aspect-video w-full max-w-md overflow-hidden rounded-lg border">
                   <Image
-                    src={field.value || "/placeholder.svg"}
+                    src={field.value || '/placeholder.svg'}
                     alt="Thumbnail preview"
                     width={640}
                     height={360}
@@ -218,16 +218,16 @@ export function BlogForm({ blog }: BlogFormProps) {
           <Button type="submit" disabled={isSubmitting}>
             {isSubmitting
               ? blog
-                ? "Updating..."
-                : "Creating..."
+                ? 'Updating...'
+                : 'Creating...'
               : blog
-                ? "Update Blog"
-                : "Create Blog"}
+                ? 'Update Blog'
+                : 'Create Blog'}
           </Button>
           <Button
             type="button"
             variant="outline"
-            onClick={() => router.push("/dashboard/blogs")}
+            onClick={() => router.push('/dashboard/blogs')}
           >
             Cancel
           </Button>

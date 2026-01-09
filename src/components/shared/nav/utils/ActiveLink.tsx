@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React from 'react';
 
 interface ActiveLinkProps {
   href: string;
@@ -13,7 +13,7 @@ interface ActiveLinkProps {
 export function ActiveLink({
   href,
   children,
-  extraClasses = "",
+  extraClasses = '',
 }: ActiveLinkProps) {
   const pathname = usePathname();
   const isActive = pathname === href && pathname.startsWith(href);
@@ -22,7 +22,7 @@ export function ActiveLink({
     <Link
       href={href}
       className={`text-sm transition-colors duration-300 ${
-        isActive ? "font-semibold border-primary" : ""
+        isActive ? 'font-semibold border-primary' : ''
       } ${extraClasses}`}
     >
       {children}

@@ -3,7 +3,7 @@ import { getBlogById, updateBlog, deleteBlog } from '@/lib/blog-service';
 
 export async function GET(
   request: NextRequest,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   { params }: { params: any },
 ) {
   const { id } = await params;
@@ -26,7 +26,7 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   { params }: { params: any },
 ) {
   const { id } = await params;
@@ -46,7 +46,7 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   { params }: { params: any },
 ) {
   const { id } = await params;

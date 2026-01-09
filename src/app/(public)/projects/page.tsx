@@ -1,10 +1,10 @@
-import ProjectCard from "@/components/card/ProjectCard";
-import { projects } from "@/constant/projectData";
-import type { Metadata } from "next";
+import ProjectCard from '@/components/card/ProjectCard';
+import { projects } from '@/constant/projectData';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Projects | Portfolio",
-  description: "Browse all my projects and see my work",
+  title: 'Projects | Portfolio',
+  description: 'Browse all my projects and see my work',
 };
 
 export default function ProjectsPage() {

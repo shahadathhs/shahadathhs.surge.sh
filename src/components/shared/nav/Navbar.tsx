@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { BorderBeam } from "@/components/magicui/border-beam";
-import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
-import Logo from "../logo/Logo";
-import { ModeToggle } from "../ModeToggle";
-import { LargeNavLinks } from "./utils/LargeNavLinks";
-import { MobileNavDropdown } from "./utils/MobileNavDropdown";
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { cn } from '@/lib/utils';
+import { useEffect, useState } from 'react';
+import Logo from '../logo/Logo';
+import { ModeToggle } from '../ModeToggle';
+import { LargeNavLinks } from './utils/LargeNavLinks';
+import { MobileNavDropdown } from './utils/MobileNavDropdown';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,8 +17,8 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // * Update window width state.
@@ -27,21 +27,21 @@ export default function Navbar() {
       setIsMobile(window.innerWidth < 768);
     };
     handleResize(); // initial check
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <nav
       className={cn(
-        "sticky top-2 z-[9999] transition-all transform ease-in-out duration-500 mt-3",
-        scrolled ? "md:px-16" : ""
+        'sticky top-2 z-[9999] transition-all transform ease-in-out duration-500 mt-3',
+        scrolled ? 'md:px-16' : '',
       )}
     >
       <div
         className={cn(
-          "relative overflow-clip transition-all transform ease-in-out duration-500 container mx-auto bg-white dark:bg-slate-900 flex items-center justify-between border rounded p-2 lg:p-4",
-          scrolled ? "max-w-7xl" : ""
+          'relative overflow-clip transition-all transform ease-in-out duration-500 container mx-auto bg-white dark:bg-slate-900 flex items-center justify-between border rounded p-2 lg:p-4',
+          scrolled ? 'max-w-7xl' : '',
         )}
       >
         {/* Logo */}

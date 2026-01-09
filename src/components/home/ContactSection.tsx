@@ -1,37 +1,37 @@
-"use client";
+'use client';
 
-import { sendEmail } from "@/app/actions/email";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle, Copy, Github, Linkedin, Mail } from "lucide-react";
-import type React from "react";
-import { useState } from "react";
-import { toast } from "sonner";
-import { BorderBeam } from "../magicui/border-beam";
-import { TypingAnimation } from "../magicui/typing-animation";
+import { sendEmail } from '@/app/actions/email';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { CheckCircle, Copy, Github, Linkedin, Mail } from 'lucide-react';
+import type React from 'react';
+import { useState } from 'react';
+import { toast } from 'sonner';
+import { BorderBeam } from '../magicui/border-beam';
+import { TypingAnimation } from '../magicui/typing-animation';
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
   });
 
-  const email = "shahadathhossensajib732@gmail.com";
+  const email = 'shahadathhossensajib732@gmail.com';
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
-    toast.success("Email copied to clipboard", {
-      icon: "📋",
+    toast.success('Email copied to clipboard', {
+      icon: '📋',
       duration: 2000,
-      description: "You can now paste it anywhere you need.",
+      description: 'You can now paste it anywhere you need.',
     });
 
     setTimeout(() => {
@@ -40,7 +40,7 @@ export default function ContactSection() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -54,29 +54,29 @@ export default function ContactSection() {
       const result = await sendEmail(formData);
 
       if (result.success) {
-        toast.success("Message sent successfully!", {
+        toast.success('Message sent successfully!', {
           description: "Thank you for reaching out. I'll get back to you soon.",
         });
 
         // Reset form
         setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
         });
       } else {
-        toast.error("Error sending message", {
-          icon: "❌",
-          description: result.error || "Please try again later.",
+        toast.error('Error sending message', {
+          icon: '❌',
+          description: result.error || 'Please try again later.',
         });
       }
     } catch (error) {
-      toast.error("Something went wrong", {
-        icon: "❌",
-        description: "Please try again later.",
+      toast.error('Something went wrong', {
+        icon: '❌',
+        description: 'Please try again later.',
       });
-      console.error("Error sending email:", error);
+      console.error('Error sending email:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -223,7 +223,7 @@ export default function ContactSection() {
                   className="w-full"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Email"}
+                  {isSubmitting ? 'Sending...' : 'Send Email'}
                 </Button>
               </form>
             </CardContent>

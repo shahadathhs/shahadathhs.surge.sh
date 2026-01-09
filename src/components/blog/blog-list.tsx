@@ -1,16 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { getAllBlogs } from "@/lib/blog-service";
-import { nanoid } from "nanoid";
+} from '@/components/ui/card';
+import { getAllBlogs } from '@/lib/blog-service';
+import { nanoid } from 'nanoid';
 
 export async function BlogList({
   query,
@@ -26,7 +26,8 @@ export async function BlogList({
       <div className="flex flex-col items-center justify-center py-12 text-center">
         <h3 className="text-lg font-medium">No blog posts found</h3>
         <p className="text-muted-foreground">
-          Try adjusting your search or filter to find what you&apos;re looking for.
+          Try adjusting your search or filter to find what you&apos;re looking
+          for.
         </p>
       </div>
     );
@@ -38,7 +39,7 @@ export async function BlogList({
         <Card key={nanoid()} className="flex flex-col overflow-hidden pt-0">
           <div className="relative h-48 w-full">
             <Image
-              src={blog.thumbnailUrl || "/placeholder.svg?height=200&width=400"}
+              src={blog.thumbnailUrl || '/placeholder.svg?height=200&width=400'}
               alt={blog.title}
               fill
               className="object-cover"

@@ -1,8 +1,8 @@
-import { BorderBeam } from "@/components/magicui/border-beam";
-import Terminal from "@/components/terminal/Terminal";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { BorderBeam } from '@/components/magicui/border-beam';
+import Terminal from '@/components/terminal/Terminal';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 export default function TerminalPage() {
   return (
@@ -19,7 +19,7 @@ export default function TerminalPage() {
             Now about me via commands
           </h1>
           <p className="text-center text-muted-foreground">
-            Type commands like <code>skills</code>, <code>projects</code>, or{" "}
+            Type commands like <code>skills</code>, <code>projects</code>, or{' '}
             <code>contact</code> to explore my portfolio interactively.
           </p>
         </div>

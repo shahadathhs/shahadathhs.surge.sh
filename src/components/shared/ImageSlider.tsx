@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { useState } from 'react';
+import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 interface ImageSliderProps {
   images: string[];
@@ -34,8 +34,8 @@ export default function ImageSlider({ images, className }: ImageSliderProps) {
     return (
       <div
         className={cn(
-          "relative w-full h-[400px] bg-muted rounded-lg",
-          className
+          'relative w-full h-[400px] bg-muted rounded-lg',
+          className,
         )}
       >
         <div className="absolute inset-0 flex items-center justify-center">
@@ -46,10 +46,10 @@ export default function ImageSlider({ images, className }: ImageSliderProps) {
   }
 
   return (
-    <div className={cn("relative w-full h-[400px] group", className)}>
+    <div className={cn('relative w-full h-[400px] group', className)}>
       <div className="relative h-full w-full rounded-lg overflow-hidden">
         <Image
-          src={images[currentIndex] || "/placeholder.svg"}
+          src={images[currentIndex] || '/placeholder.svg'}
           alt={`Slide ${currentIndex + 1}`}
           fill
           className="object-cover transition-all duration-500"
@@ -85,7 +85,7 @@ export default function ImageSlider({ images, className }: ImageSliderProps) {
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
             className={`w-2.5 h-2.5 rounded-full transition-all ${
-              currentIndex === slideIndex ? "bg-primary" : "bg-muted"
+              currentIndex === slideIndex ? 'bg-primary' : 'bg-muted'
             }`}
             aria-label={`Go to slide ${slideIndex + 1}`}
           />

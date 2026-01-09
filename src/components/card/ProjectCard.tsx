@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -8,8 +8,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import ImageSlider from "../shared/ImageSlider";
+} from '@/components/ui/card';
+import ImageSlider from '../shared/ImageSlider';
 
 interface ProjectCardProps {
   id: string;

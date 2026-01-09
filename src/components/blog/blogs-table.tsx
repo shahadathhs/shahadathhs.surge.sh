@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { Edit, Eye, MoreHorizontal, Trash, Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import Link from 'next/link';
+import { Edit, Eye, MoreHorizontal, Trash, Plus } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 import {
   Table,
   TableBody,
@@ -19,7 +19,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -29,11 +29,11 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import { useBlogs } from "@/lib/use-blogs";
-import { deleteBlog } from "@/lib/blog-service";
-import { toast } from "sonner";
-import { Blog } from "@/lib/models";
+} from '@/components/ui/alert-dialog';
+import { useBlogs } from '@/lib/use-blogs';
+import { deleteBlog } from '@/lib/blog-service';
+import { toast } from 'sonner';
+import { Blog } from '@/lib/models';
 
 export function BlogsTable() {
   const { blogs, isLoading, mutate } = useBlogs();
@@ -46,13 +46,13 @@ export function BlogsTable() {
     try {
       await deleteBlog(blogToDelete);
       mutate();
-      toast("Blog deleted", {
-        description: "Your blog post has been deleted successfully",
+      toast('Blog deleted', {
+        description: 'Your blog post has been deleted successfully',
       });
     } catch (error) {
-      console.error("Error deleting blog:", error);
-      toast("Error", {
-        description: "Failed to delete blog post",
+      console.error('Error deleting blog:', error);
+      toast('Error', {
+        description: 'Failed to delete blog post',
       });
     } finally {
       setBlogToDelete(null);

@@ -1,6 +1,6 @@
-import { ActiveLink } from "@/components/shared/nav/utils/ActiveLink";
-import { navLinks } from "@/constant/navigationLinks";
-import { nanoid } from "nanoid";
+import { ActiveLink } from '@/components/shared/nav/utils/ActiveLink';
+import { navLinks } from '@/constant/navigationLinks';
+import { nanoid } from 'nanoid';
 
 export const LargeNavLinks = () => {
   return (

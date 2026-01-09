@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { DashboardNav } from "@/components/dashboard/dashboard-nav";
-import { Button } from "@/components/ui/button";
+import { DashboardNav } from '@/components/dashboard/dashboard-nav';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,13 +9,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useToast } from "@/hooks/use-toast";
-import { useAuth } from "@/lib/auth-context";
-import { LogOut, Menu } from "lucide-react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+} from '@/components/ui/dropdown-menu';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/lib/auth-context';
+import { LogOut, Menu } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export function DashboardHeader() {
   const { user, logout } = useAuth();
@@ -25,10 +25,10 @@ export function DashboardHeader() {
   const handleLogout = async () => {
     await logout();
     toast({
-      title: "Logged out",
-      description: "You have been logged out successfully",
+      title: 'Logged out',
+      description: 'You have been logged out successfully',
     });
-    router.push("/");
+    router.push('/');
   };
 
   return (

@@ -1,12 +1,12 @@
-import { Suspense } from "react";
-import { BlogList } from "@/components/blog/blog-list";
+import { Suspense } from 'react';
+import { BlogList } from '@/components/blog/blog-list';
 // import { BlogSearch } from "@/components/blog-search";
 // import { CategoryFilter } from "@/components/category-filter";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from '@/components/ui/skeleton';
 
 export const metadata = {
-  title: "All Blogs",
-  description: "Browse all our blog posts",
+  title: 'All Blogs',
+  description: 'Browse all our blog posts',
 };
 
 export default async function BlogsPage({

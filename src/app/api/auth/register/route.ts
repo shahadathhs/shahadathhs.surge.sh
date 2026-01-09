@@ -8,7 +8,10 @@ export async function POST(request: NextRequest) {
     const { name, email, password } = body;
 
     if (!email || !password || !name) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 },
+      );
     }
 
     const existingUser = await db.user.findUnique({
@@ -16,7 +19,10 @@ export async function POST(request: NextRequest) {
     });
 
     if (existingUser) {
-      return NextResponse.json({ error: 'User already exists' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'User already exists' },
+        { status: 400 },
+      );
     }
 
     const hashedPassword = await hashPassword(password);

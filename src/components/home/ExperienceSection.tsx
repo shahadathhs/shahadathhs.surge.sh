@@ -1,6 +1,6 @@
-import { experienceData } from "@/constant/experienceData";
-import { BorderBeam } from "../magicui/border-beam";
-import { Timeline } from "../ui/timeline";
+import { experienceData } from '@/constant/experienceData';
+import { BorderBeam } from '../magicui/border-beam';
+import { Timeline } from '../ui/timeline';
 
 export default function ExperienceSection() {
   return (

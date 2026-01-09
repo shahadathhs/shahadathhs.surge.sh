@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import * as React from 'react';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
 export function ThemeProvider({
   children,
@@ -15,7 +15,7 @@ export function ThemeProvider({
 
   // Render a placeholder (or nothing) until mounted
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>{children}</div>;
+    return <div style={{ visibility: 'hidden' }}>{children}</div>;
   }
 
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;

@@ -1,14 +1,14 @@
-import { nanoid } from "nanoid";
-import { ActiveLink } from "./ActiveLink";
-import { navLinks } from "@/constant/navigationLinks";
+import { nanoid } from 'nanoid';
+import { ActiveLink } from './ActiveLink';
+import { navLinks } from '@/constant/navigationLinks';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { Menu } from 'lucide-react';
 
 export const MobileNavDropdown = () => {
   return (

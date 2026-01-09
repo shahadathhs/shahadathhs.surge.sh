@@ -3,9 +3,9 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Github, Linkedin, Twitter } from "lucide-react";
-import Link from "next/link";
+} from '@/components/ui/tooltip';
+import { Github, Linkedin, Twitter } from 'lucide-react';
+import Link from 'next/link';
 
 export default function SocialLinks() {
   return (
