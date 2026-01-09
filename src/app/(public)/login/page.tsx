@@ -111,14 +111,6 @@ export default function LoginPage() {
             </form>
           </Form>
         </CardContent>
-        {/* <CardFooter className="flex justify-center">
-          <p className="text-sm text-muted-foreground">
-            Don&apos;t have an account?{" "}
-            <Link href="/dashboard/register" className="text-primary underline">
-              Register
-            </Link>
-          </p>
-        </CardFooter> */}
       </Card>
     </div>
   );

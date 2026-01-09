@@ -19,6 +19,9 @@ const configuration = {
   jwtExpiration: process.env.JWT_EXPIRATION,
   jwtRefreshExpiration: process.env.JWT_REFRESH_EXPIRATION,
   geminiAPIKey: process.env.GEMINI_API_KEY,
+  adminName: process.env.ADMIN_NAME,
+  adminEmail: process.env.ADMIN_EMAIL,
+  adminPassword: process.env.ADMIN_PASSWORD,
 };
 
 export default configuration;

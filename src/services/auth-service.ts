@@ -5,41 +5,6 @@ import prisma from '@/db';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-export async function registerUser({
-  name,
-  email,
-  password,
-}: {
-  name: string;
-  email: string;
-  password: string;
-}) {
-  // Check if user already exists
-  const existingUser = await prisma.user.findUnique({ where: { email } });
-  if (existingUser) {
-    throw new Error('User already exists');
-  }
-
-  // Hash password
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(password, salt);
-
-  // Create new user
-  const user = await prisma.user.create({
-    data: {
-      name,
-      email,
-      password: hashedPassword,
-    },
-  });
-
-  return {
-    id: user.id,
-    name: user.name,
-    email: user.email,
-  };
-}
-
 export async function login(email: string, password: string) {
   // Find user
   const user = await prisma.user.findUnique({ where: { email } });

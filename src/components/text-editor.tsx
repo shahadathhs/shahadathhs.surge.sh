@@ -65,6 +65,7 @@ export function TextEditor({ value, onChange }: TextEditorProps) {
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
     },
+    immediatelyRender: false,
     editorProps: {
       attributes: {
         class:

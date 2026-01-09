@@ -7,10 +7,7 @@ export const navLinks = [
   { title: 'Skills', link: '/skills' },
 ];
 
-export const authLinks = [
-  { title: 'Login', link: '/login' },
-  { title: 'Register', link: '/register' },
-];
+export const authLinks = [{ title: 'Login', link: '/login' }];
 
 // * footer
 export const quickLinks = [

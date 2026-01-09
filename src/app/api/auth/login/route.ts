@@ -40,22 +40,13 @@ export async function POST(request: NextRequest) {
       role: user.role,
     });
 
-    const response = NextResponse.json({
+    return NextResponse.json({
       id: user.id,
       name: user.name,
       email: user.email,
       role: user.role,
+      token,
     });
-
-    response.cookies.set('token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 86400, // 1 day
-      path: '/',
-    });
-
-    return response;
   } catch (error: any) {
     console.error('Login error:', error);
     return NextResponse.json({ error: 'Login failed' }, { status: 500 });
