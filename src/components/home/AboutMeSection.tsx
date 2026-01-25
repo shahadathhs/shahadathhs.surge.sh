@@ -42,44 +42,33 @@ export default function AboutMeSection() {
   return (
     <div className="relative w-full mt-10 border rounded overflow-clip">
       <WarpBackground>
-        <section
-          id="about"
-          className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16 border-2"
-        >
+        <section id="about" className="w-full  max-w-7xl mx-auto">
           {/* Header Block */}
           <div className="mb-10">
             <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
               About Me
             </h2>
+            <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base max-w-4xl">
+              Hi, I&apos;m Shahadath Hossen Sajib — a backend developer
+              passionate about building clean, scalable, and maintainable
+              systems. I currently work at a service-based company where I
+              develop APIs and backend features using NestJS, Drizzle ORM,
+              Prisma, and PostgreSQL. Starting my journey with the MERN stack, I
+              gradually found my interest in the backend ecosystem — working
+              with databases, designing APIs, and focusing on performance and
+              clean architecture. Outside of work, I&apos;m actively learning
+              advanced NestJS patterns, PostgreSQL internals, and data
+              structures & algorithms to sharpen my problem-solving and system
+              design skills. I also love working on side projects that challenge
+              me and help me grow as a developer. I&apos;m always eager to
+              explore new technologies, improve my craft, and collaborate on
+              meaningful products.
+            </p>
           </div>
 
           {/* Text & Features */}
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1 space-y-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-neutral-700 dark:text-neutral-300 text-base">
-                  Hi, I&apos;m Shahadath Hossen Sajib — a backend developer
-                  passionate about building clean, scalable, and maintainable
-                  systems. I currently work at a service-based company where I
-                  develop APIs and backend features using NestJS, Drizzle ORM,
-                  Prisma, and PostgreSQL. Starting my journey with the MERN
-                  stack, I gradually found my interest in the backend ecosystem
-                  — working with databases, designing APIs, and focusing on
-                  performance and clean architecture. Outside of work, I&apos;m
-                  actively learning advanced NestJS patterns, PostgreSQL
-                  internals, and data structures & algorithms to sharpen my
-                  problem-solving and system design skills. I also love working
-                  on side projects that challenge me and help me grow as a
-                  developer. I&apos;m always eager to explore new technologies,
-                  improve my craft, and collaborate on meaningful products.
-                </p>
-              </motion.div>
-
               <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4"
                 initial="hidden"

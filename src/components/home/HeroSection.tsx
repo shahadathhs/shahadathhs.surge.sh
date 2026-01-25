@@ -14,7 +14,10 @@ export default function HeroSection() {
   const firstTotal = firstLine.length * stagger + duration;
 
   return (
-    <div className="relative mx-auto my-10 flex flex-col items-center justify-center">
+    <div
+      id="hero"
+      className="relative mx-auto my-10 flex flex-col items-center justify-center"
+    >
       {/* top */}
       <div className="absolute inset-x-0 top-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-stone-500 to-transparent" />

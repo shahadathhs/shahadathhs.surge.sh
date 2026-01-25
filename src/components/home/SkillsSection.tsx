@@ -73,10 +73,13 @@ export default function SkillsSection() {
 
   return (
     <div className="relative w-full mt-10 border rounded overflow-clip">
-      <section className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16">
+      <section
+        id="skills"
+        className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16"
+      >
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
-          <div className="mb-16">
+          <div className="mb-10">
             <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
               Technical Skills
             </h2>

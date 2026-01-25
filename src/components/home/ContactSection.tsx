@@ -35,14 +35,16 @@ export default function ContactSection() {
       >
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
-          <div className="flex flex-col items-center text-center mb-10">
+          <div className="flex flex-col items-start text-left mb-10">
             <h2 className="text-3xl font-semibold text-black dark:text-white mb-4">
               <TypingAnimation>Get in touch</TypingAnimation>
             </h2>
-
             <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-2xl">
-              I&apos;m always open to new opportunities, collaborations, or just
-              a friendly chat about backend architecture and API design.
+              {/* I&apos;m always open to new opportunities, collaborations, or just
+              a friendly chat about backend architecture and API design. */}
+              I&apos;m a backend developer passionate about building clean,
+              scalable systems. Here&apos;s a bit about my journey and what I
+              bring to the table.
             </p>
           </div>
 
