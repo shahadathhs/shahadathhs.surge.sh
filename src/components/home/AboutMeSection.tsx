@@ -44,88 +44,78 @@ export default function AboutMeSection() {
       <WarpBackground>
         <section
           id="about"
-          className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16"
+          className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16 border-2"
         >
-          <div className="max-w-7xl mx-auto">
-            {/* Header Block */}
-            <div className="mb-16">
-              <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
-                About Me
-              </h2>
-              <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base max-w-2xl">
-                I&apos;m a backend developer passionate about building clean,
-                scalable systems. Here&apos;s a bit about my journey and what I
-                bring to the table.
-              </p>
-            </div>
+          {/* Header Block */}
+          <div className="mb-10">
+            <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
+              About Me
+            </h2>
+          </div>
 
-            {/* Text & Features */}
-            <div className="flex flex-col md:flex-row items-center gap-10">
-              <div className="flex-1 space-y-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="text-neutral-700 dark:text-neutral-300 text-base">
-                    Hi, I&apos;m Shahadath Hossen Sajib — a backend developer
-                    passionate about building clean, scalable, and maintainable
-                    systems. I currently work at a service-based company where I
-                    develop APIs and backend features using NestJS, Drizzle ORM,
-                    Prisma, and PostgreSQL. Starting my journey with the MERN
-                    stack, I gradually found my interest in the backend
-                    ecosystem — working with databases, designing APIs, and
-                    focusing on performance and clean architecture. Outside of
-                    work, I&apos;m actively learning advanced NestJS patterns,
-                    PostgreSQL internals, and data structures & algorithms to
-                    sharpen my problem-solving and system design skills. I also
-                    love working on side projects that challenge me and help me
-                    grow as a developer. I&apos;m always eager to explore new
-                    technologies, improve my craft, and collaborate on
-                    meaningful products.
-                  </p>
-                </motion.div>
+          {/* Text & Features */}
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="flex-1 space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-neutral-700 dark:text-neutral-300 text-base">
+                  Hi, I&apos;m Shahadath Hossen Sajib — a backend developer
+                  passionate about building clean, scalable, and maintainable
+                  systems. I currently work at a service-based company where I
+                  develop APIs and backend features using NestJS, Drizzle ORM,
+                  Prisma, and PostgreSQL. Starting my journey with the MERN
+                  stack, I gradually found my interest in the backend ecosystem
+                  — working with databases, designing APIs, and focusing on
+                  performance and clean architecture. Outside of work, I&apos;m
+                  actively learning advanced NestJS patterns, PostgreSQL
+                  internals, and data structures & algorithms to sharpen my
+                  problem-solving and system design skills. I also love working
+                  on side projects that challenge me and help me grow as a
+                  developer. I&apos;m always eager to explore new technologies,
+                  improve my craft, and collaborate on meaningful products.
+                </p>
+              </motion.div>
 
-                <motion.div
-                  className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4"
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  variants={{
-                    hidden: {},
-                    show: { transition: { staggerChildren: 0.2 } },
-                  }}
-                >
-                  {features.map((feature, idx) => (
-                    <motion.div
-                      key={idx}
-                      variants={{
-                        hidden: { opacity: 0, y: 20 },
-                        show: {
-                          opacity: 1,
-                          y: 0,
-                          transition: { duration: 0.5 },
-                        },
-                      }}
-                    >
-                      <Card className="hover:shadow-xl transform hover:-translate-y-1 transition bg-white dark:bg-neutral-900 border-neutral-100 dark:border-neutral-800">
-                        <CardHeader className="flex flex-row items-center gap-4">
-                          <feature.icon className="w-6 h-6 text-blue-500" />
-                          <CardTitle className="text-lg font-semibold">
-                            {feature.title}
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription>
-                            {feature.description}
-                          </CardDescription>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: {},
+                  show: { transition: { staggerChildren: 0.2 } },
+                }}
+              >
+                {features.map((feature, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.5 },
+                      },
+                    }}
+                  >
+                    <Card className="hover:shadow-xl transform hover:-translate-y-1 transition bg-white dark:bg-neutral-900 border-neutral-100 dark:border-neutral-800">
+                      <CardHeader className="flex flex-row items-center gap-4">
+                        <feature.icon className="w-6 h-6 text-blue-500" />
+                        <CardTitle className="text-lg font-semibold">
+                          {feature.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription>{feature.description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>

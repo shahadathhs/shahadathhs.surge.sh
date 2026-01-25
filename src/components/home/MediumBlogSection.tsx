@@ -54,7 +54,7 @@ export default function MediumBlogSection() {
             </p>
           </div>
 
-          <div className="flex flex-col max-w-5xl mx-auto border-t border-border/50">
+          <div className="flex flex-col max-w-7xl mx-auto border-t border-border/50">
             {posts.map((post, idx) => (
               <motion.div
                 key={post.link}
