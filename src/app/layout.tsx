@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import Navbar from '@/components/shared/nav/Navbar';
 import Footer from '@/components/shared/Footer';
+import ScrollToTop from '@/components/shared/ScrollToTop';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -43,6 +44,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </main>
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

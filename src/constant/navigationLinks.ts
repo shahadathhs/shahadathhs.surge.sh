@@ -1,7 +1,7 @@
 export const navLinks = [
-  { title: 'Home', link: '#hero' },
   { title: 'Skills', link: '#skills' },
   { title: 'Projects', link: '#projects' },
+  { title: 'Blogs', link: '#blogs' },
   { title: 'Contact', link: '#contact' },
 ];
 
@@ -11,6 +11,7 @@ export const authLinks = [];
 export const quickLinks = [
   { title: 'Skills', link: '#skills' },
   { title: 'Projects', link: '#projects' },
+  { title: 'Blogs', link: '#blogs' },
   { title: 'Contact', link: '#contact' },
 ];
 

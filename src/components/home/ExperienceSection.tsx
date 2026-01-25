@@ -6,7 +6,7 @@ export default function ExperienceSection() {
   return (
     <div
       id="experience"
-      className="relative w-full mt-10 border rounded overflow-clip"
+      className="relative w-full mt-10 border rounded overflow-clip scroll-mt-24"
     >
       <Timeline data={experienceData} />
       <BorderBeam duration={200} size={250} />

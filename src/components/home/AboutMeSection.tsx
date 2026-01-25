@@ -40,15 +40,18 @@ const features = [
 
 export default function AboutMeSection() {
   return (
-    <div className="relative w-full mt-10 border rounded overflow-clip">
+    <div
+      id="about"
+      className="relative w-full mt-10 border rounded overflow-clip scroll-mt-24"
+    >
       <WarpBackground>
-        <section id="about" className="w-full  max-w-7xl mx-auto">
+        <section className="w-full  max-w-7xl mx-auto">
           {/* Header Block */}
-          <div className="mb-10">
-            <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
+          <div className="mb-10 flex flex-col md:items-center md:text-center">
+            <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl mx-auto">
               About Me
             </h2>
-            <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base max-w-4xl">
+            <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base max-w-4xl mx-auto">
               Hi, I&apos;m Shahadath Hossen Sajib — a backend developer
               passionate about building clean, scalable, and maintainable
               systems. I currently work at a service-based company where I

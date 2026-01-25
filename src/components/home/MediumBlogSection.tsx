@@ -28,18 +28,18 @@ export default function MediumBlogSection() {
   }
 
   return (
-    <div className="relative w-full mt-10 border rounded overflow-clip">
-      <section
-        id="blogs"
-        className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16"
-      >
+    <div
+      id="blogs"
+      className="relative w-full mt-10 border rounded overflow-clip scroll-mt-24"
+    >
+      <section className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
-          <div className="flex flex-col items-start mb-10">
-            <h2 className="text-4xl font-bold mb-4 text-black dark:text-white">
+          <div className="flex flex-col md:items-center md:text-center mb-10">
+            <h2 className="text-4xl font-bold mb-4 text-black dark:text-white mx-auto">
               Latest Blogs
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-2xl">
+            <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-2xl mx-auto">
               Insights on backend architecture, API design, and modern web
               development.
             </p>

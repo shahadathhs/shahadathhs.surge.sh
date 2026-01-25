@@ -28,18 +28,18 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="relative w-full mt-10 border rounded overflow-clip">
-      <section
-        id="contact"
-        className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16 border-2"
-      >
+    <div
+      id="contact"
+      className="relative w-full mt-10 border rounded overflow-clip scroll-mt-24"
+    >
+      <section className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
-          <div className="flex flex-col items-start text-left mb-10">
-            <h2 className="text-3xl font-semibold text-black dark:text-white mb-4">
+          <div className="flex flex-col items-start text-left md:items-center md:text-center mb-10">
+            <h2 className="text-3xl font-semibold text-black dark:text-white mb-4 mx-auto">
               <TypingAnimation>Get in touch</TypingAnimation>
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-2xl">
+            <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-4xl mx-auto">
               {/* I&apos;m always open to new opportunities, collaborations, or just
               a friendly chat about backend architecture and API design. */}
               I&apos;m a backend developer passionate about building clean,
