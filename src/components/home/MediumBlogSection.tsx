@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { fetchMediumPosts, MediumPost } from '@/services/medium-service';
+import { fetchMediumPosts, type MediumPost } from '@/services/medium-service';
 import { Button } from '../ui/button';
 import { Calendar, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
