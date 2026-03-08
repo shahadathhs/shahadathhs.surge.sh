@@ -2,11 +2,14 @@ export const heroData = {
   firstLine: "Hey there, I'm",
   secondLine: 'Shahadath Hossen Sajib',
   typewriterWords: [
-    'Backend Developer (Node.js)',
-    'Aspiring Software Engineer',
+    'Backend Developer (Node.js & NestJS)',
+    'Python & FastAPI Developer',
+    'Microservices Architect',
+    'Scalable Systems Builder',
+    'AI & Automation Enthusiast',
   ],
   resumeLink:
     'https://drive.google.com/file/d/1dtZCEgZyof-qrUreeVpXDlOovosegpuf/view',
   footerDescription:
-    'Backend developer passionate about building scalable, efficient, and secure server-side applications with a focus on robust architecture and clean code.',
+    'Backend developer specializing in building scalable, secure, and high-performance systems with a focus on microservices, real-time features, and AI-powered boutique solutions.',
 };

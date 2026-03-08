@@ -19,13 +19,13 @@ export default function AboutMeSection() {
       className="relative w-full mt-10 border rounded overflow-clip scroll-mt-24"
     >
       <WarpBackground>
-        <section className="w-full  max-w-7xl mx-auto">
+        <section className="w-full max-w-7xl mx-auto my-10 md:my-0">
           {/* Header Block */}
-          <div className="mb-10 flex flex-col md:items-center md:text-center">
-            <h2 className="text-4xl mb-4 font-bold dark:text-white text-black  max-w-4xl mx-auto">
+          <div className="mb-10 flex flex-col">
+            <h2 className="text-4xl mb-4 font-bold dark:text-white text-black">
               About Me
             </h2>
-            <p className="mt-2 text-neutral-700 dark:text-neutral-300  text-base max-w-4xl mx-auto">
+            <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-justify text-base">
               {aboutMeBio}
             </p>
           </div>

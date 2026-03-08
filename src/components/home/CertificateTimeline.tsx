@@ -17,12 +17,12 @@ export default function CertificateTimeline() {
       <section className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
-          <div className="flex flex-col md:items-center md:text-center mb-16">
+          <div className="flex flex-col max-w-4xl mb-16">
             <div>
-              <h2 className="text-4xl mb-4 font-bold dark:text-white text-black  max-w-4xl mx-auto">
+              <h2 className="text-4xl mb-4 font-bold dark:text-white text-black">
                 Certifications
               </h2>
-              <p className="mt-2 text-neutral-700 dark:text-neutral-300  text-base max-w-2xl mx-auto">
+              <p className="mt-2 text-neutral-700 dark:text-neutral-300  text-base max-w-2xl">
                 A collection of professional certifications and courses that
                 have helped me deepen my knowledge and master new technologies.
               </p>

@@ -32,17 +32,17 @@ export const Timeline = ({ data }: TimelineProps) => {
           <h2 className="text-4xl mb-4 font-bold text-black dark:text-white max-w-4xl">
             My Tech Journey
           </h2>
-          <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base max-w-2xl">
+          <p className="mt-2 text-neutral-700 dark:text-neutral-300 text-base text-justify max-w-2xl">
             Over the past 2 years, I&apos;ve grown through hands-on experience
             and real-world projects. Here&apos;s a look at some key milestones
-            that shaped my path so far. Always open to exciting
-            opportunities—let&apos;s connect!
+            that shaped my path so far. Always open to exciting opportunities.
+            Let&apos;s connect!
           </p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-px top-0 h-full w-0.5 bg-neutral-200 dark:bg-neutral-800">
+          <div className="absolute left-4 top-0 h-full w-0.5 bg-neutral-200 dark:bg-neutral-800">
             <motion.div
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"
               style={{ height: progressHeight }}
@@ -95,6 +95,7 @@ const TimelineEntryComponent = ({
       },
     }),
   };
+  console.log(isEven);
 
   return (
     <motion.div
@@ -106,7 +107,7 @@ const TimelineEntryComponent = ({
       variants={variants}
     >
       {/* Timeline dot */}
-      <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+      <div className="absolute z-10">
         <motion.div
           className={cn(
             'h-8 w-8 rounded-full border-4 border-white dark:border-neutral-950 flex items-center justify-center transition-all duration-300',
@@ -119,12 +120,7 @@ const TimelineEntryComponent = ({
       </div>
 
       {/* Content card */}
-      <div
-        className={cn(
-          'ml-12 md:ml-0 md:w-[calc(50%-40px)]',
-          isEven ? 'md:mr-auto' : 'md:ml-auto',
-        )}
-      >
+      <div className="ml-12">
         <motion.div
           className={cn(
             'bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-100 dark:border-neutral-800 transition-all duration-300',

@@ -37,11 +37,11 @@ export default function ContactSection() {
       <section className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
-          <div className="flex flex-col items-start text-left md:items-center md:text-center mb-10">
-            <h2 className="text-3xl font-semibold dark:text-white text-black  mb-4 mx-auto">
+          <div className="flex flex-col items-start text-left max-w-2xl mb-10">
+            <h2 className="text-3xl font-semibold dark:text-white text-black  mb-4">
               <TypingAnimation>Get in touch</TypingAnimation>
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300  text-base max-w-6xl mx-auto">
+            <p className="text-neutral-700 dark:text-neutral-300  text-base max-w-4xl">
               {/* I&apos;m always open to new opportunities, collaborations, or just
               a friendly chat about backend architecture and API design. */}
               I&apos;m a backend developer passionate about building clean,

@@ -35,11 +35,11 @@ export default function MediumBlogSection() {
       <section className="w-full bg-white dark:bg-neutral-950 py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Header Block */}
-          <div className="flex flex-col md:items-center md:text-center mb-10">
-            <h2 className="text-4xl font-bold mb-4 dark:text-white text-black  mx-auto">
+          <div className="flex flex-col max-w-4xl mb-10">
+            <h2 className="text-4xl font-bold mb-4 dark:text-white text-black">
               Latest Blogs
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300  text-base max-w-2xl mx-auto">
+            <p className="text-neutral-700 dark:text-neutral-300  text-base max-w-2xl">
               Insights on backend architecture, API design, and modern web
               development.
             </p>
