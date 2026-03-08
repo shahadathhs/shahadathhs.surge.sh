@@ -47,10 +47,8 @@ I specialize in **microservices architecture**, developing large, configurable b
 
 ## 📊 GitHub Statistics
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=shahadathhs&show_icons=true&theme=transparent#gh-dark-mode-only" alt="Shahadath's GitHub stats" width="400" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shahadathhs&layout=compact&theme=transparent#gh-dark-mode-only" alt="Top Languages" width="300" />
-</p>
+![GitHub Overview](https://github.com/shahadathhs/github-stats/blob/main/generated/overview.svg#gh-dark-mode-only)
+![Languages Used](https://github.com/shahadathhs/github-stats/blob/main/generated/languages.svg#gh-dark-mode-only)
 
 ---
 
