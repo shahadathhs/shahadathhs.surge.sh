@@ -18,17 +18,17 @@ export function ActiveLink({
   return (
     <Link
       href={href}
-      className={`relative py-1 text-sm transition-colors duration-300 hover:text-blue-500 ${
+      className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
         isActive
-          ? 'text-blue-600 dark:text-blue-400 font-semibold'
-          : 'text-neutral-600 dark:text-neutral-400'
+          ? 'text-nav-accent'
+          : 'text-nav-foreground hover:text-nav-foreground/80'
       } ${extraClasses}`}
     >
       {children}
       {isActive && (
         <motion.div
           layoutId="nav-underline"
-          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-500"
+          className="absolute bottom-0 left-3 right-3 h-px bg-gradient-to-r from-nav-accent/0 via-nav-accent to-nav-accent/0"
           transition={{ type: 'spring', stiffness: 380, damping: 30 }}
         />
       )}

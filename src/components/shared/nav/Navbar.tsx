@@ -1,6 +1,5 @@
 'use client';
 
-import { BorderBeam } from '@/components/magicui/border-beam';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 import Logo from '../logo/Logo';
@@ -33,29 +32,26 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'sticky top-2 z-[9999] transition-all transform ease-in-out duration-500 mt-3',
-        scrolled ? 'md:px-16' : '',
+        'sticky top-0 z-[9999] w-full transition-all duration-500',
+        scrolled
+          ? 'py-3 border-b border-nav-border/30 backdrop-blur-xl bg-nav-background/80'
+          : 'py-6 border-b border-nav-border/0 bg-nav-background',
       )}
     >
-      <div
-        className={cn(
-          'relative overflow-clip transition-all transform ease-in-out duration-500 container mx-auto bg-white dark:bg-slate-900 flex items-center justify-between border rounded p-2 lg:p-4',
-          scrolled ? 'max-w-7xl' : '',
-        )}
-      >
-        {/* Logo */}
-        <Logo />
+      <div className="container mx-auto max-w-6xl px-2 lg:px-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Logo />
 
-        {/* Navigation Links */}
-        <div className="flex items-center space-x-3">
-          {/* Desktop Navigation: Large screen links */}
-          {!isMobile && <LargeNavLinks />}
+          {/* Navigation Links */}
+          <div className="flex items-center">
+            {/* Desktop Navigation: Large screen links */}
+            {!isMobile && <LargeNavLinks />}
 
-          {/* Mobile Navigation: Render dropdown for mobile devices */}
-          {isMobile && <MobileNavDropdown />}
+            {/* Mobile Navigation: Render dropdown for mobile devices */}
+            {isMobile && <MobileNavDropdown />}
+          </div>
         </div>
-
-        <BorderBeam duration={40} size={100} />
       </div>
     </nav>
   );
