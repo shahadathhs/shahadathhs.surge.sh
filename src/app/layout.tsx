@@ -17,8 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Sajib | Portfolio',
-  description: 'Welcome to my portfolio website',
+  title: 'Shahadath Hossen Sajib | Backend Developer Portfolio',
+  description:
+    'Backend Developer specializing in Node.js, NestJS, Python, FastAPI, and Microservices. Building scalable, secure, and high-performance systems.',
 };
 
 export default function RootLayout({
