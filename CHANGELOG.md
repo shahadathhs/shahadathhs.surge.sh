@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/shahadathhs/shahadathhs.surge.sh/compare/v1.1.0...v1.2.0) (2026-03-19)
+
+### Features
+
+- add resume links and categorize projects ([3e35ebc](https://github.com/shahadathhs/shahadathhs.surge.sh/commit/3e35ebcef035b89ca19e2e64d8ec86380c33e296))
+
 # [1.1.0](https://github.com/shahadathhs/shahadathhs.surge.sh/compare/v1.0.0...v1.1.0) (2026-03-19)
 
 ### Features
