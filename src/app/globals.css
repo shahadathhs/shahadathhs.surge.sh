@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
@@ -18,38 +17,34 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
 }
 
 :root {
-  --radius: 1.5rem;
   --background: oklch(0.99 0 0);
   --foreground: oklch(0.12 0.02 240);
   --primary: oklch(0.2 0.02 240);
   --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.95 0.01 240);
   --secondary-foreground: oklch(0.12 0.02 240);
-  --accent: oklch(0.5 0.15 240);
+  --accent: oklch(0.4 0.1 240);
   --accent-foreground: oklch(0.99 0 0);
   --muted: oklch(0.96 0.01 240);
   --muted-foreground: oklch(0.45 0.02 240);
-  --border: oklch(0.12 0.02 240 / 6%);
+  --border: oklch(0.12 0.02 240 / 10%);
 }
 
 .dark {
-  --background: oklch(0.08 0.02 240);
-  --foreground: oklch(0.96 0.01 240);
+  --background: oklch(0.05 0.01 240);
+  --foreground: oklch(0.92 0.01 240);
   --primary: oklch(0.99 0 0);
-  --primary-foreground: oklch(0.08 0.02 240);
-  --secondary: oklch(0.15 0.02 240);
-  --secondary-foreground: oklch(0.96 0.01 240);
-  --accent: oklch(0.7 0.18 200);
-  --accent-foreground: oklch(0.08 0.02 240);
-  --muted: oklch(0.15 0.02 240);
-  --muted-foreground: oklch(0.6 0.02 240);
-  --border: oklch(0.96 0.01 240 / 8%);
+  --primary-foreground: oklch(0.05 0.01 240);
+  --secondary: oklch(0.12 0.02 240);
+  --secondary-foreground: oklch(0.92 0.01 240);
+  --accent: oklch(0.8 0.1 200);
+  --accent-foreground: oklch(0.05 0.01 240);
+  --muted: oklch(0.12 0.02 240);
+  --muted-foreground: oklch(0.6 0.01 240);
+  --border: oklch(0.92 0.01 240 / 15%);
 }
 
 html {
@@ -62,25 +57,9 @@ html {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans selection:bg-accent/30 tracking-tight;
+    @apply bg-background text-foreground font-sans selection:bg-accent/20 tracking-tight;
   }
-}
-
-@layer utilities {
-  .glass {
-    @apply backdrop-blur-xl bg-background/40 border border-foreground/5;
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter;
   }
-  
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-linear-to-b from-foreground via-foreground to-foreground/40;
-  }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.animate-float {
-  animation: float 8s ease-in-out infinite;
 }
