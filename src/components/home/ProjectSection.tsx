@@ -99,7 +99,7 @@ export default function ProjectSection() {
           </motion.div>
         )}
 
-        <div className="grid grid-cols-1 divide-y divide-foreground/5 border-t border-foreground/5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {loading
             ? Array.from({ length: 4 }).map((_, i) => (
                 <ProjectSkeleton key={i} />

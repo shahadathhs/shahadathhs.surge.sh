@@ -32,7 +32,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="space-y-6 max-w-3xl"
         >
-          <h2 className="text-5xl md:text-8xl font-bold tracking-tighter leading-none">
+          <h2 className="text-5xl font-bold tracking-tighter leading-none">
             Let&apos;s build something{' '}
             <span className="text-accent italic">exceptional</span>.
           </h2>
@@ -47,7 +47,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative w-full max-w-4xl group"
+          className="relative w-full max-w-6xl group"
         >
           <div className="absolute inset-x-0 -bottom-12 -top-12 bg-accent/5 rounded-[4rem] blur-3xl group-hover:bg-accent/10 transition-colors" />
           <button

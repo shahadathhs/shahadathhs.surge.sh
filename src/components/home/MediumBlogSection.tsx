@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { fetchMediumPosts, type MediumPost } from '@/services/medium-service';
 import { Button } from '../ui/button';
-import { Calendar, ExternalLink } from 'lucide-react';
+import { Calendar, ExternalLink, PenTool } from 'lucide-react';
 import { motion } from 'motion/react';
 import BlogSkeleton from '../skeleton/BlogSkeleton';
 
@@ -41,11 +41,26 @@ export default function MediumBlogSection() {
               evolving AI landscape.
             </p>
           </div>
+          <Button asChild variant="outline" className="rounded-full px-6 glass">
+            <a
+              href="https://medium.com/@shahadathhs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <PenTool className="w-4 h-4" />
+              Follow on Medium
+            </a>
+          </Button>
         </div>
 
-        <div className="grid grid-cols-1 divide-y divide-foreground/5 border-t border-foreground/5">
+        <div className="grid grid-cols-1 gap-6">
           {loading
-            ? Array.from({ length: 3 }).map((_, i) => <BlogSkeleton key={i} />)
+            ? Array.from({ length: 3 }).map((_, i) => (
+                <div key={i} className="px-0">
+                  <BlogSkeleton />
+                </div>
+              ))
             : posts.map((post, idx) => (
                 <motion.div
                   key={post.link}
@@ -53,13 +68,13 @@ export default function MediumBlogSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group"
+                  className="group glass border-foreground/5 p-8 rounded-[2rem] hover:border-foreground/10 transition-all duration-500"
                 >
                   <a
                     href={post.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col md:flex-row md:items-center justify-between py-10 gap-8 group/link"
+                    className="flex flex-col md:flex-row md:items-center justify-between gap-8 group/link"
                   >
                     <div className="flex-1 space-y-4">
                       <div className="flex items-center gap-4 text-xs font-semibold tracking-widest text-muted-foreground uppercase">

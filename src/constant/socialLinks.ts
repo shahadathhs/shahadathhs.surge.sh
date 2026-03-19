@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter, PenTool, Mail } from 'lucide-react';
 
 export const socialLinks = [
   {
@@ -15,5 +15,15 @@ export const socialLinks = [
     name: 'GitHub',
     href: 'https://github.com/shahadathhs',
     icon: Github,
+  },
+  {
+    name: 'Medium',
+    href: 'https://medium.com/@shahadathhs',
+    icon: PenTool,
+  },
+  {
+    name: 'Substack',
+    href: 'https://shahadathhs.substack.com',
+    icon: Mail,
   },
 ];
