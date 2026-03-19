@@ -1,10 +1,10 @@
-import Hero from '@/components/home/MinimalHero';
-import About from '@/components/home/MinimalAbout';
-import Experience from '@/components/home/MinimalExperience';
-import Skills from '@/components/home/MinimalSkills';
-import Projects from '@/components/home/MinimalProjects';
-import Blogs from '@/components/home/MinimalBlogs';
-import Contact from '@/components/home/MinimalContact';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Experience from '@/components/Experience';
+import Skills from '@/components/Skills';
+import Projects from '@/components/Projects';
+import Blogs from '@/components/Blogs';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   return (

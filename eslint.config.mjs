@@ -6,7 +6,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
-  globalIgnores(['node_modules/*', '.next/*', '.vercel/*']),
+  globalIgnores(['node_modules/*', '.next/*', '.vercel/*', 'out/*']),
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     languageOptions: {

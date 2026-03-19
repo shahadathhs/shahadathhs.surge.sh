@@ -9,14 +9,25 @@ export default function Blogs() {
 
   useEffect(() => {
     const loadPosts = async () => {
-      const data = await fetchMediumPosts('shahadathhs');
-      setPosts(data.slice(0, 3));
-      setLoading(false);
+      try {
+        const data = await fetchMediumPosts('shahadathhs');
+        setPosts(data.slice(0, 3));
+      } catch (error) {
+        console.error('Error loading posts:', error);
+      } finally {
+        setLoading(false);
+      }
     };
     loadPosts();
   }, []);
 
-  if (loading) return <div>Loading blogs...</div>;
+  if (loading) {
+    return (
+      <div className="text-xs font-bold uppercase tracking-widest opacity-40 animate-pulse mb-16">
+        Loading blogs...
+      </div>
+    );
+  }
   if (posts.length === 0) return null;
 
   return (

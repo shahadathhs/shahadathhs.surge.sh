@@ -10,14 +10,25 @@ export default function Projects() {
 
   useEffect(() => {
     const loadRepos = async () => {
-      const response = await fetchMultipleRepos('shahadathhs', PINNED_REPOS);
-      setRepos(response.data);
-      setLoading(false);
+      try {
+        const response = await fetchMultipleRepos('shahadathhs', PINNED_REPOS);
+        setRepos(response.data);
+      } catch (error) {
+        console.error('Error loading repos:', error);
+      } finally {
+        setLoading(false);
+      }
     };
     loadRepos();
   }, []);
 
-  if (loading) return <div>Loading projects...</div>;
+  if (loading) {
+    return (
+      <div className="text-xs font-bold uppercase tracking-widest opacity-40 animate-pulse mb-16">
+        Loading projects...
+      </div>
+    );
+  }
 
   return (
     <section className="space-y-12 mb-16">

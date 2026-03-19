@@ -1,34 +1,16 @@
 import Link from 'next/link';
-import { FileQuestion, Home, Search } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-background">
-      <div className="flex flex-col items-center max-w-md text-center">
-        <div className="flex items-center justify-center w-20 h-20 rounded-full bg-muted mb-6">
-          <FileQuestion className="w-10 h-10 text-muted-foreground" />
-        </div>
-        <h1 className="text-6xl font-bold mb-2">404</h1>
-        <h2 className="text-2xl font-semibold mb-2">Page Not Found</h2>
-        <p className="text-muted-foreground mb-8">
-          Sorry, the page you are looking for does not exist or has been moved.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Button asChild className="gap-2">
-            <Link href="/">
-              <Home className="w-4 h-4" />
-              Return home
-            </Link>
-          </Button>
-          <Button variant="outline" asChild className="gap-2">
-            <Link href="/contact">
-              <Search className="w-4 h-4" />
-              Contact me
-            </Link>
-          </Button>
-        </div>
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-background text-center">
+      <h1 className="text-4xl font-bold mb-4">404</h1>
+      <p className="text-muted-foreground mb-8">Page not found.</p>
+      <Link
+        href="/"
+        className="text-xs font-bold uppercase tracking-widest hover:underline decoration-border underline-offset-4"
+      >
+        Return Home
+      </Link>
     </div>
   );
 }
