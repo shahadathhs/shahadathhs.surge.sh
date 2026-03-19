@@ -58,7 +58,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Surge
+      - name: Build site
+        run: pnpm build
+
+      - name: Deploy to Surge
         run: npx surge out --domain $SURGE_DOMAIN --token $SURGE_TOKEN --login $SURGE_LOGIN
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
