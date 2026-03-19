@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/shahadathhs/shahadathhs.surge.sh/compare/v1.0.0...v1.1.0) (2026-03-19)
+
+### Features
+
+- enhance site metadata for SEO ([8a68bea](https://github.com/shahadathhs/shahadathhs.surge.sh/commit/8a68bea62a06cd390585af9337bb5b168ad9ffb5))
+
 # 1.0.0 (2026-03-19)
 
 ### Bug Fixes
